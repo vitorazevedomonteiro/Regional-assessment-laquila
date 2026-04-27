@@ -8,4 +8,6 @@ To run MSA:
       - msa.py
       - rcmrf.py
       - utilities.py
-    In these scripts I only changed from where I was calling the models: 'from .vitor_3Dbuildings.CR_LFINF_7_CDL_1H_dp04.model import build_model'
+      In these scripts I only changed from where I was calling the models: 'from .vitor_3Dbuildings.CR_LFINF_7_CDL_1H_dp04.model import build_model'
+    4.2. I used multiprocess with 20 cores to help make this analysis faster.
+  5. In the server, where it's the place I run these analyses, I have a folder like "3Dbuildings_cdl_1h" but for each typology specifically so inside each one what I mentioned in the previous point applies to them as well!
