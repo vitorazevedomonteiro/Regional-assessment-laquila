@@ -1,0 +1,79 @@
+# MODAL ANALYSIS REPORT
+
+* 1. DOMAIN SIZE:
+# This is the size of the problem: 1 for 1D problems, 2 for 2D problems, 3 for 3D problems.
+3
+
+
+* 2. EIGENVALUE ANALYSIS:
+#          MODE        LAMBDA         OMEGA     FREQUENCY        PERIOD
+# ------------- ------------- ------------- ------------- -------------
+              1        631.99       25.1394       4.00106      0.249934
+              2       764.705       27.6533       4.40116      0.227213
+
+
+* 3. TOTAL MASS OF THE STRUCTURE:
+# The total masses (translational and rotational) of the structure
+# including the masses at fixed DOFs (if any).
+#            MX            MY            MZ           RMX           RMY           RMZ
+# ------------- ------------- ------------- ------------- ------------- -------------
+        302.857       302.857       302.857       4685.67       6663.06       9842.04
+
+
+* 4. TOTAL FREE MASS OF THE STRUCTURE:
+# The total masses (translational and rotational) of the structure
+# including only the masses at free DOFs.
+#            MX            MY            MZ           RMX           RMY           RMZ
+# ------------- ------------- ------------- ------------- ------------- -------------
+        299.692       299.692       299.692       4581.75       6538.45       9731.27
+
+
+* 5. CENTER OF MASS:
+# The center of mass of the structure, calculated from free masses.
+#             X             Y             Z
+# ------------- ------------- -------------
+           6.65       5.03324       4.31303
+
+
+* 6. MODAL PARTICIPATION FACTORS:
+# The participation factor for a certain mode 'a' in a certain direction 'i'
+# indicates how strongly displacement along (or rotation about)
+# the global axes is represented in the eigenvector of that mode.
+#          MODE            MX            MY            MZ           RMX           RMY           RMZ
+# ------------- ------------- ------------- ------------- ------------- ------------- -------------
+              1     0.0117138       1.24891   0.000522458      -0.82513    0.00891889      0.016654
+              2       1.39024    -0.0144436   -0.00324811     0.0224569      0.961026      0.928219
+
+
+* 7. MODAL PARTICIPATION MASSES:
+# The modal participation masses for each mode.
+#          MODE            MX            MY            MZ           RMX           RMY           RMZ
+# ------------- ------------- ------------- ------------- ------------- ------------- -------------
+              1     0.0225348       256.164   4.48288e-05       111.815      0.013064     0.0455506
+              2       252.394     0.0272427    0.00137772     0.0658566       120.606       112.513
+
+
+* 8. MODAL PARTICIPATION MASSES (cumulative):
+# The cumulative modal participation masses for each mode.
+#          MODE            MX            MY            MZ           RMX           RMY           RMZ
+# ------------- ------------- ------------- ------------- ------------- ------------- -------------
+              1     0.0225348       256.164   4.48288e-05       111.815      0.013064     0.0455506
+              2       252.417       256.191    0.00142255       111.881       120.619       112.558
+
+
+* 9. MODAL PARTICIPATION MASS RATIOS (%):
+# The modal participation mass ratios (%) for each mode.
+#          MODE            MX            MY            MZ           RMX           RMY           RMZ
+# ------------- ------------- ------------- ------------- ------------- ------------- -------------
+              1    0.00751934       85.4757   1.49583e-05       2.44044   0.000199803   0.000468085
+              2       84.2179    0.00909024   0.000459713    0.00143737       1.84457        1.1562
+
+
+* 10. MODAL PARTICIPATION MASS RATIOS (%) (cumulative):
+# The cumulative modal participation mass ratios (%) for each mode.
+#          MODE            MX            MY            MZ           RMX           RMY           RMZ
+# ------------- ------------- ------------- ------------- ------------- ------------- -------------
+              1    0.00751934       85.4757   1.49583e-05       2.44044   0.000199803   0.000468085
+              2       84.2254       85.4848   0.000474672       2.44188       1.84477       1.15666
+
+

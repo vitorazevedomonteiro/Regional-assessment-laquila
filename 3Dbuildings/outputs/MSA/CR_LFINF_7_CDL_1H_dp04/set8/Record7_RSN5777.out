@@ -1,0 +1,13 @@
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 20 iterations  current Norm: 2.76707e-05 (max: 1e-06, Norm deltaR: 0.269707)
+NewtonRaphson::solveCurrentStep() -the ConvergenceTest object failed in test()
+DirectIntegrationAnalysis::analyze() - the Algorithm failed at time 32.94
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1221(dW: << 8.26083e-06, dW0: 0.000113428)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
+DirectIntegrationAnalysis::analyze() - the Algorithm failed at time 32.94
+OpenSees > analyze failed, returned: -3 error flag
+
+[FAILURE] Local structure collapse, MIDR = 10.0

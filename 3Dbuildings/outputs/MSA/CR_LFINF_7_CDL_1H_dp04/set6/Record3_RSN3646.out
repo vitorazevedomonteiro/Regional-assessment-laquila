@@ -1,0 +1,30 @@
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3210(dW: << 9.35788e-06, dW0: 0.000175463)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNING NewtonRaphson::solveCurrentStep() -the Integrator failed in update()
+DirectIntegrationAnalysis::analyze() - the Algorithm failed at time 10.785
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3210(dW: << 9.35788e-06, dW0: 0.000175464)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
+DirectIntegrationAnalysis::analyze() - the Algorithm failed at time 10.785
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3210(dW: << 9.35788e-06, dW0: 0.000175463)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNING NewtonLineSearch::solveCurrentStep() -the Integrator failed in update()
+DirectIntegrationAnalysis::analyze() - the Algorithm failed at time 10.785
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3210(dW: << 9.35788e-06, dW0: 0.000175469)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNING Broyden::solveCurrentStep() -the Integrator failed in update()
+DirectIntegrationAnalysis::analyze() - the Algorithm failed at time 10.785
+OpenSees > analyze failed, returned: -3 error flag
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.45515 (max: 1e-06, Norm deltaR: 798816)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 0.00120894 (max: 1e-06, Norm deltaR: 2.98956)
+
+[FAILURE] Local structure collapse, MIDR = 10.0

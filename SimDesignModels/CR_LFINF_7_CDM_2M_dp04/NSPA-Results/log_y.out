@@ -1,0 +1,6 @@
+WARNING: CTestEnergyIncr::test() - failed to converge 
+after: 20 iterations
+ current EnergyIncr: 0.00354233 (max: 1e-06) 	Norm deltaX: 0.000946845, Norm deltaR: 57.3948
+NewtonRaphson::solveCurrentStep() -the ConvergenceTest object failed in test()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 510.845
+OpenSees > analyze failed, returned: -3 error flag

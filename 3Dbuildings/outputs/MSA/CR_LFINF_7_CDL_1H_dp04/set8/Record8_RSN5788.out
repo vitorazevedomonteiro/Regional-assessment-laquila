@@ -1,0 +1,30 @@
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3200(dW: << 0.000790496, dW0: 0.0323503)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNING NewtonRaphson::solveCurrentStep() -the Integrator failed in update()
+DirectIntegrationAnalysis::analyze() - the Algorithm failed at time 24.865
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3200(dW: << 0.000790188, dW0: 0.0323493)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
+DirectIntegrationAnalysis::analyze() - the Algorithm failed at time 24.865
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3200(dW: << 0.000790496, dW0: 0.0323503)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNING NewtonLineSearch::solveCurrentStep() -the Integrator failed in update()
+DirectIntegrationAnalysis::analyze() - the Algorithm failed at time 24.865
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3200(dW: << 0.000787847, dW0: 0.0323504)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNING Broyden::solveCurrentStep() -the Integrator failed in update()
+DirectIntegrationAnalysis::analyze() - the Algorithm failed at time 24.865
+OpenSees > analyze failed, returned: -3 error flag
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.10355 (max: 1e-06, Norm deltaR: 180224)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 0.025238 (max: 1e-06, Norm deltaR: 55.4059)
+
+[SUCCESS] Analysis completed successfully, MIDR = 9.609412286027387

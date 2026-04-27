@@ -1,0 +1,163 @@
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 20 iterations  current Norm: 0.000230981 (max: 1e-06, Norm deltaR: 2.82309)
+NewtonRaphson::solveCurrentStep() -the ConvergenceTest object failed in test()
+DirectIntegrationAnalysis::analyze() - the Algorithm failed at time 30.58
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456054, dW0: 0.00833706)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
+DirectIntegrationAnalysis::analyze() - the Algorithm failed at time 30.58
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456059, dW0: 0.00851458)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.00045606, dW0: 0.00842835)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456054, dW0: 0.00837007)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456056, dW0: 0.00841094)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.00045606, dW0: 0.00836721)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456056, dW0: 0.00841059)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456057, dW0: 0.00836715)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456055, dW0: 0.00841058)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456057, dW0: 0.00836715)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456055, dW0: 0.00841058)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456057, dW0: 0.00836715)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456055, dW0: 0.00841058)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456057, dW0: 0.00836715)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456055, dW0: 0.00841058)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456057, dW0: 0.00836715)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456055, dW0: 0.00841058)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456057, dW0: 0.00836715)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456055, dW0: 0.00841058)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456057, dW0: 0.00836715)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456055, dW0: 0.00841058)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456057, dW0: 0.00836715)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456055, dW0: 0.00841058)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456057, dW0: 0.00836715)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456055, dW0: 0.00841058)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456057, dW0: 0.00836715)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456055, dW0: 0.00841058)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456057, dW0: 0.00836715)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 100 iterations  current Norm: 4.19294e-05 (max: 1e-06, Norm deltaR: 0.821112)
+NewtonLineSearch::solveCurrentStep() -the ConvergenceTest object failed in test()
+DirectIntegrationAnalysis::analyze() - the Algorithm failed at time 30.58
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456052, dW0: 0.00826923)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNING Broyden::solveCurrentStep() -the Integrator failed in update()
+DirectIntegrationAnalysis::analyze() - the Algorithm failed at time 30.58
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3200(dW: << 4.72583e-11, dW0: 596.87)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNING BFGS::solveCurrentStep() -the Integrator failed in update()
+DirectIntegrationAnalysis::analyze() - the Algorithm failed at time 30.58
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.000456061, dW0: 0.0085394)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
+DirectIntegrationAnalysis::analyze() - the Algorithm failed at time 30.5775
+OpenSees > analyze failed, returned: -3 error flag
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 100 iterations  current Norm: 4.8315e-06 (max: 1e-06, Norm deltaR: 1.47281)
+NewtonLineSearch::solveCurrentStep() -the ConvergenceTest object failed in test()
+DirectIntegrationAnalysis::analyze() - the Algorithm failed at time 30.5775
+OpenSees > analyze failed, returned: -3 error flag
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 0.00446166 (max: 1e-06, Norm deltaR: 4258.24)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 0.000222688 (max: 1e-06, Norm deltaR: 1.575)
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1011(dW: << 0.00824005, dW0: 0.000447657)
+Domain::update - domain failed in update
+TRBDF2::update() - failed to update the domain
+WARNING Broyden::solveCurrentStep() -the Integrator failed in update()
+DirectIntegrationAnalysis::analyze() - the Algorithm failed at time 30.5775
+OpenSees > analyze failed, returned: -3 error flag
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 2.22696 (max: 1e-06, Norm deltaR: 5.64765e+07)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 0.000217044 (max: 1e-06, Norm deltaR: 0.523926)
+
+[SUCCESS] Analysis completed successfully, MIDR = 5.93135360165826
