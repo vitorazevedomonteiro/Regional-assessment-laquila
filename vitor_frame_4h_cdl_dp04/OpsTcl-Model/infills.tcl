@@ -1,0 +1,313 @@
+# Add components of all infills to ops domain
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2000 -768.53727939 -0.0013 -7.68537279 -0.0045
+# Create the elements for diagonal struts
+element Truss 2000001 70000 11 0.20028131967675167 2000
+element Truss 2000002 1 70010 0.20028131967675167 2000
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2010 -701.49474645 -0.0013 -7.01494746 -0.0045
+# Create the elements for diagonal struts
+element Truss 2010001 70010 21 0.2194219154986277 2010
+element Truss 2010002 11 70020 0.2194219154986277 2010
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2020 -768.53727939 -0.0013 -7.68537279 -0.0045
+# Create the elements for diagonal struts
+element Truss 2020001 70020 31 0.20028131967675167 2020
+element Truss 2020002 21 70030 0.20028131967675167 2020
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2001 -768.53727939 -0.0013 -7.68537279 -0.0045
+# Create the elements for diagonal struts
+element Truss 2001001 1 12 0.20028131967675167 2001
+element Truss 2001002 2 11 0.20028131967675167 2001
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2011 -701.49474645 -0.0013 -7.01494746 -0.0045
+# Create the elements for diagonal struts
+element Truss 2011001 11 22 0.2194219154986277 2011
+element Truss 2011002 12 21 0.2194219154986277 2011
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2021 -768.53727939 -0.0013 -7.68537279 -0.0045
+# Create the elements for diagonal struts
+element Truss 2021001 21 32 0.20028131967675167 2021
+element Truss 2021002 22 31 0.20028131967675167 2021
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2002 -1157.25129027 -0.0013 -11.5725129 -0.0045
+# Create the elements for diagonal struts
+element Truss 2002001 2 13 0.13300886377971516 2002
+element Truss 2002002 3 12 0.13300886377971516 2002
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2012 -1157.25129027 -0.0013 -11.5725129 -0.0045
+# Create the elements for diagonal struts
+element Truss 2012001 12 23 0.13300886377971516 2012
+element Truss 2012002 13 22 0.13300886377971516 2012
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2022 -1157.25129027 -0.0013 -11.5725129 -0.0045
+# Create the elements for diagonal struts
+element Truss 2022001 22 33 0.13300886377971516 2022
+element Truss 2022002 23 32 0.13300886377971516 2022
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2003 -1157.24798346 -0.0013 -11.57247983 -0.0045
+# Create the elements for diagonal struts
+element Truss 2003001 3 14 0.13300973289475818 2003
+element Truss 2003002 4 13 0.13300973289475818 2003
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2013 -1157.24798346 -0.0013 -11.57247983 -0.0045
+# Create the elements for diagonal struts
+element Truss 2013001 13 24 0.13300973289475818 2013
+element Truss 2013002 14 23 0.13300973289475818 2013
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2023 -1157.24798346 -0.0013 -11.57247983 -0.0045
+# Create the elements for diagonal struts
+element Truss 2023001 23 34 0.13300973289475818 2023
+element Truss 2023002 24 33 0.13300973289475818 2023
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2300 -768.53727939 -0.0013 -7.68537279 -0.0045
+# Create the elements for diagonal struts
+element Truss 2300001 70300 311 0.20028131967675167 2300
+element Truss 2300002 301 70310 0.20028131967675167 2300
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2310 -701.49474645 -0.0013 -7.01494746 -0.0045
+# Create the elements for diagonal struts
+element Truss 2310001 70310 321 0.2194219154986277 2310
+element Truss 2310002 311 70320 0.2194219154986277 2310
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2320 -768.53727939 -0.0013 -7.68537279 -0.0045
+# Create the elements for diagonal struts
+element Truss 2320001 70320 331 0.20028131967675167 2320
+element Truss 2320002 321 70330 0.20028131967675167 2320
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2301 -768.53727939 -0.0013 -7.68537279 -0.0045
+# Create the elements for diagonal struts
+element Truss 2301001 301 312 0.20028131967675167 2301
+element Truss 2301002 302 311 0.20028131967675167 2301
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2311 -701.49474645 -0.0013 -7.01494746 -0.0045
+# Create the elements for diagonal struts
+element Truss 2311001 311 322 0.2194219154986277 2311
+element Truss 2311002 312 321 0.2194219154986277 2311
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2321 -768.53727939 -0.0013 -7.68537279 -0.0045
+# Create the elements for diagonal struts
+element Truss 2321001 321 332 0.20028131967675167 2321
+element Truss 2321002 322 331 0.20028131967675167 2321
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2302 -1157.25129027 -0.0013 -11.5725129 -0.0045
+# Create the elements for diagonal struts
+element Truss 2302001 302 313 0.13300886377971516 2302
+element Truss 2302002 303 312 0.13300886377971516 2302
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2312 -1157.25129027 -0.0013 -11.5725129 -0.0045
+# Create the elements for diagonal struts
+element Truss 2312001 312 323 0.13300886377971516 2312
+element Truss 2312002 313 322 0.13300886377971516 2312
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2322 -1157.25129027 -0.0013 -11.5725129 -0.0045
+# Create the elements for diagonal struts
+element Truss 2322001 322 333 0.13300886377971516 2322
+element Truss 2322002 323 332 0.13300886377971516 2322
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2303 -1157.24798346 -0.0013 -11.57247983 -0.0045
+# Create the elements for diagonal struts
+element Truss 2303001 303 314 0.13300973289475818 2303
+element Truss 2303002 304 313 0.13300973289475818 2303
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2313 -1157.24798346 -0.0013 -11.57247983 -0.0045
+# Create the elements for diagonal struts
+element Truss 2313001 313 324 0.13300973289475818 2313
+element Truss 2313002 314 323 0.13300973289475818 2313
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2323 -1157.24798346 -0.0013 -11.57247983 -0.0045
+# Create the elements for diagonal struts
+element Truss 2323001 323 334 0.13300973289475818 2323
+element Truss 2323002 324 333 0.13300973289475818 2323
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3000 -743.27078188 -0.0013 -7.43270782 -0.0045
+# Create the elements for diagonal struts
+element Truss 3000001 70000 101 0.20709098622489738 3000
+element Truss 3000002 1 70100 0.20709098622489738 3000
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3200 -743.27078188 -0.0013 -7.43270782 -0.0045
+# Create the elements for diagonal struts
+element Truss 3200001 70200 301 0.20709098622489738 3200
+element Truss 3200002 1201 70300 0.20709098622489738 3200
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3001 -743.27078188 -0.0013 -7.43270782 -0.0045
+# Create the elements for diagonal struts
+element Truss 3001001 1 102 0.20709098622489738 3001
+element Truss 3001002 2 101 0.20709098622489738 3001
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3201 -743.27078188 -0.0013 -7.43270782 -0.0045
+# Create the elements for diagonal struts
+element Truss 3201001 201 302 0.20709098622489738 3201
+element Truss 3201002 1202 301 0.20709098622489738 3201
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3002 -1157.24467666 -0.0013 -11.57244677 -0.0045
+# Create the elements for diagonal struts
+element Truss 3002001 2 103 0.13301060201382886 3002
+element Truss 3002002 3 102 0.13301060201382886 3002
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3202 -1157.24467666 -0.0013 -11.57244677 -0.0045
+# Create the elements for diagonal struts
+element Truss 3202001 202 303 0.13301060201382886 3202
+element Truss 3202002 1203 302 0.13301060201382886 3202
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3003 -1157.24467666 -0.0013 -11.57244677 -0.0045
+# Create the elements for diagonal struts
+element Truss 3003001 3 104 0.13301060201382886 3003
+element Truss 3003002 4 103 0.13301060201382886 3003
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3203 -1157.24467666 -0.0013 -11.57244677 -0.0045
+# Create the elements for diagonal struts
+element Truss 3203001 203 304 0.13301060201382886 3203
+element Truss 3203002 1204 303 0.13301060201382886 3203
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3030 -768.53345414 -0.0013 -7.68533454 -0.0045
+# Create the elements for diagonal struts
+element Truss 3030001 70030 131 0.20028378935053082 3030
+element Truss 3030002 31 70130 0.20028378935053082 3030
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3130 -822.04984692 -0.0013 -8.22049847 -0.0045
+# Create the elements for diagonal struts
+element Truss 3130001 70130 231 0.14321055149956896 3130
+element Truss 3130002 131 70230 0.14321055149956896 3130
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3230 -768.53345414 -0.0013 -7.68533454 -0.0045
+# Create the elements for diagonal struts
+element Truss 3230001 70230 331 0.20028378935053082 3230
+element Truss 3230002 231 70330 0.20028378935053082 3230
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3031 -768.53345414 -0.0013 -7.68533454 -0.0045
+# Create the elements for diagonal struts
+element Truss 3031001 31 132 0.20028378935053082 3031
+element Truss 3031002 32 131 0.20028378935053082 3031
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3131 -822.04984692 -0.0013 -8.22049847 -0.0045
+# Create the elements for diagonal struts
+element Truss 3131001 131 232 0.14321055149956896 3131
+element Truss 3131002 132 231 0.14321055149956896 3131
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3231 -768.53345414 -0.0013 -7.68533454 -0.0045
+# Create the elements for diagonal struts
+element Truss 3231001 231 332 0.20028378935053082 3231
+element Truss 3231002 232 331 0.20028378935053082 3231
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3032 -977.23749873 -0.0013 -9.77237499 -0.0045
+# Create the elements for diagonal struts
+element Truss 3032001 32 133 0.15751081160675584 3032
+element Truss 3032002 33 132 0.15751081160675584 3032
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3132 -1035.58794272 -0.0013 -10.35587943 -0.0045
+# Create the elements for diagonal struts
+element Truss 3132001 132 233 0.11368141227562119 3132
+element Truss 3132002 133 232 0.11368141227562119 3132
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3232 -977.23749873 -0.0013 -9.77237499 -0.0045
+# Create the elements for diagonal struts
+element Truss 3232001 232 333 0.15751081160675584 3232
+element Truss 3232002 233 332 0.15751081160675584 3232
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3033 -977.23749873 -0.0013 -9.77237499 -0.0045
+# Create the elements for diagonal struts
+element Truss 3033001 33 134 0.15751081160675584 3033
+element Truss 3033002 34 133 0.15751081160675584 3033
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3133 -1035.58794272 -0.0013 -10.35587943 -0.0045
+# Create the elements for diagonal struts
+element Truss 3133001 133 234 0.11368141227562119 3133
+element Truss 3133002 134 233 0.11368141227562119 3133
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3233 -977.23749873 -0.0013 -9.77237499 -0.0045
+# Create the elements for diagonal struts
+element Truss 3233001 233 334 0.15751081160675584 3233
+element Truss 3233002 234 333 0.15751081160675584 3233
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2101 -317.96478472 -0.0013 -3.17964785 -0.0045
+# Create the elements for diagonal struts
+element Truss 2101001 70100 1201 0.3009273095125958 2101
+element Truss 2101002 1101 70200 0.3009273095125958 2101
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3234 -317.96358448 -0.0013 -3.17963584 -0.0045
+# Create the elements for diagonal struts
+element Truss 3234001 1101 201 0.3009303351407609 3234
+element Truss 3234002 101 1201 0.3009303351407609 3234
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2102 -317.96358448 -0.0013 -3.17963584 -0.0045
+# Create the elements for diagonal struts
+element Truss 2102001 101 1202 0.3009303351407609 2102
+element Truss 2102002 1102 201 0.3009303351407609 2102
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3235 -317.96358448 -0.0013 -3.17963584 -0.0045
+# Create the elements for diagonal struts
+element Truss 3235001 1102 202 0.3009303351407609 3235
+element Truss 3235002 102 1202 0.3009303351407609 3235
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2103 -477.94204056 -0.0013 -4.77942041 -0.0045
+# Create the elements for diagonal struts
+element Truss 2103001 102 1203 0.20020540803967407 2103
+element Truss 2103002 1103 202 0.20020540803967407 2103
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3236 -477.94204056 -0.0013 -4.77942041 -0.0045
+# Create the elements for diagonal struts
+element Truss 3236001 1103 203 0.20020540803967407 3236
+element Truss 3236002 103 1203 0.20020540803967407 3236
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 2104 -477.94010363 -0.0013 -4.77940104 -0.0045
+# Create the elements for diagonal struts
+element Truss 2104001 103 1204 0.2002074765678747 2104
+element Truss 2104002 1104 203 0.2002074765678747 2104
+
+# Create the material for diagonal struts
+uniaxialMaterial Concrete01 3104 -477.94010363 -0.0013 -4.77940104 -0.0045
+# Create the elements for diagonal struts
+element Truss 3104001 1104 204 0.2002074765678747 3104
+element Truss 3104002 104 1204 0.2002074765678747 3104
