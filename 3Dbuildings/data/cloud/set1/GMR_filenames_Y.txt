@@ -1,0 +1,10 @@
+RSN122_FRIULI.A_A-COD270.AT2_scaled_directionY.txt
+RSN143_TABAS_TAB-T1.AT2_scaled_directionY.txt
+RSN169_IMPVALL.H_H-DLT352.AT2_scaled_directionY.txt
+RSN176_IMPVALL.H_H-E13230.AT2_scaled_directionY.txt
+RSN180_IMPVALL.H_H-E05230.AT2_scaled_directionY.txt
+RSN185_IMPVALL.H_H-HVP315.AT2_scaled_directionY.txt
+RSN215_LIVERMOR_A-SRM340.AT2_scaled_directionY.txt
+RSN239_MAMMOTH.AH_A-LUL090.AT2_scaled_directionY.txt
+RSN33_PARKF_TMB295.AT2_scaled_directionY.txt
+RSN77_SFERN_PUL254.AT2_scaled_directionY.txt

@@ -13,7 +13,7 @@ if __name__ == "__main__":
     path = Path(__file__).parent
     outputs_dir = (
         path
-        / f"outputs/MSA/{taxonomy}"
+        / f"outputs/cloud/{taxonomy}"
     )
     outputs_dir.mkdir(parents=True, exist_ok=True)
     gmdir = path / f"data/{record_set}"
