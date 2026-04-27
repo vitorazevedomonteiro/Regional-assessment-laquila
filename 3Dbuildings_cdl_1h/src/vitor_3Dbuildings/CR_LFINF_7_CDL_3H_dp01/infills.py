@@ -1,0 +1,239 @@
+import openseespy.opensees as ops
+
+
+def add_infills() -> None:
+    """Add components of all infills to ops domain
+    """
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2000, -977.24274978, -0.0013, -9.7724275, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2000001, 70000, 11, 0.15750880699363068, 2000)
+    ops.element('Truss', 2000002, 1, 70010, 0.15750880699363068, 2000)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2010, -873.49860859, -0.0013, -8.73498609, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2010001, 70010, 21, 0.17621550691043397, 2010)
+    ops.element('Truss', 2010002, 11, 70020, 0.17621550691043397, 2010)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2020, -977.24274978, -0.0013, -9.7724275, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2020001, 70020, 31, 0.15750880699363068, 2020)
+    ops.element('Truss', 2020002, 21, 70030, 0.15750880699363068, 2020)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2001, -977.24274978, -0.0013, -9.7724275, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2001001, 1, 12, 0.15750880699363068, 2001)
+    ops.element('Truss', 2001002, 2, 11, 0.15750880699363068, 2001)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2011, -873.49860859, -0.0013, -8.73498609, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2011001, 11, 22, 0.17621550691043397, 2011)
+    ops.element('Truss', 2011002, 12, 21, 0.17621550691043397, 2011)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2021, -977.24274978, -0.0013, -9.7724275, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2021001, 21, 32, 0.15750880699363068, 2021)
+    ops.element('Truss', 2021002, 22, 31, 0.15750880699363068, 2021)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2002, -977.24274978, -0.0013, -9.7724275, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2002001, 2, 13, 0.15750880699363068, 2002)
+    ops.element('Truss', 2002002, 3, 12, 0.15750880699363068, 2002)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2012, -873.49860859, -0.0013, -8.73498609, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2012001, 12, 23, 0.17621550691043397, 2012)
+    ops.element('Truss', 2012002, 13, 22, 0.17621550691043397, 2012)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2022, -977.24274978, -0.0013, -9.7724275, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2022001, 22, 33, 0.15750880699363068, 2022)
+    ops.element('Truss', 2022002, 23, 32, 0.15750880699363068, 2022)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2300, -977.24274978, -0.0013, -9.7724275, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2300001, 70300, 311, 0.15750880699363068, 2300)
+    ops.element('Truss', 2300002, 301, 70310, 0.15750880699363068, 2300)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2310, -873.49860859, -0.0013, -8.73498609, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2310001, 70310, 321, 0.17621550691043397, 2310)
+    ops.element('Truss', 2310002, 311, 70320, 0.17621550691043397, 2310)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2320, -977.24274978, -0.0013, -9.7724275, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2320001, 70320, 331, 0.15750880699363068, 2320)
+    ops.element('Truss', 2320002, 321, 70330, 0.15750880699363068, 2320)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2301, -977.24274978, -0.0013, -9.7724275, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2301001, 301, 312, 0.15750880699363068, 2301)
+    ops.element('Truss', 2301002, 302, 311, 0.15750880699363068, 2301)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2311, -873.49860859, -0.0013, -8.73498609, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2311001, 311, 322, 0.17621550691043397, 2311)
+    ops.element('Truss', 2311002, 312, 321, 0.17621550691043397, 2311)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2321, -977.24274978, -0.0013, -9.7724275, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2321001, 321, 332, 0.15750880699363068, 2321)
+    ops.element('Truss', 2321002, 322, 331, 0.15750880699363068, 2321)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2302, -977.24274978, -0.0013, -9.7724275, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2302001, 302, 313, 0.15750880699363068, 2302)
+    ops.element('Truss', 2302002, 303, 312, 0.15750880699363068, 2302)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2312, -873.49860859, -0.0013, -8.73498609, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2312001, 312, 323, 0.17621550691043397, 2312)
+    ops.element('Truss', 2312002, 313, 322, 0.17621550691043397, 2312)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2322, -977.24274978, -0.0013, -9.7724275, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2322001, 322, 333, 0.15750880699363068, 2322)
+    ops.element('Truss', 2322002, 323, 332, 0.15750880699363068, 2322)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 3000, -937.27836025, -0.0013, -9.3727836, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 3000001, 70000, 101, 0.16422587450829945, 3000)
+    ops.element('Truss', 3000002, 1, 70100, 0.16422587450829945, 3000)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 3200, -937.27836025, -0.0013, -9.3727836, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 3200001, 70200, 301, 0.16422587450829945, 3200)
+    ops.element('Truss', 3200002, 1201, 70300, 0.16422587450829945, 3200)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 3001, -937.27836025, -0.0013, -9.3727836, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 3001001, 1, 102, 0.16422587450829945, 3001)
+    ops.element('Truss', 3001002, 2, 101, 0.16422587450829945, 3001)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 3201, -937.27836025, -0.0013, -9.3727836, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 3201001, 201, 302, 0.16422587450829945, 3201)
+    ops.element('Truss', 3201002, 1202, 301, 0.16422587450829945, 3201)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 3002, -937.27836025, -0.0013, -9.3727836, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 3002001, 2, 103, 0.16422587450829945, 3002)
+    ops.element('Truss', 3002002, 3, 102, 0.16422587450829945, 3002)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 3202, -937.27836025, -0.0013, -9.3727836, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 3202001, 202, 303, 0.16422587450829945, 3202)
+    ops.element('Truss', 3202002, 1203, 302, 0.16422587450829945, 3202)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 3030, -977.23749873, -0.0013, -9.77237499, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 3030001, 70030, 131, 0.15751081160675584, 3030)
+    ops.element('Truss', 3030002, 31, 70130, 0.15751081160675584, 3030)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 3130, -1035.58794272, -0.0013, -10.35587943, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 3130001, 70130, 231, 0.11368141227562119, 3130)
+    ops.element('Truss', 3130002, 131, 70230, 0.11368141227562119, 3130)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 3230, -977.23749873, -0.0013, -9.77237499, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 3230001, 70230, 331, 0.15751081160675584, 3230)
+    ops.element('Truss', 3230002, 231, 70330, 0.15751081160675584, 3230)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 3031, -977.23749873, -0.0013, -9.77237499, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 3031001, 31, 132, 0.15751081160675584, 3031)
+    ops.element('Truss', 3031002, 32, 131, 0.15751081160675584, 3031)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 3131, -1035.58794272, -0.0013, -10.35587943, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 3131001, 131, 232, 0.11368141227562119, 3131)
+    ops.element('Truss', 3131002, 132, 231, 0.11368141227562119, 3131)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 3231, -977.23749873, -0.0013, -9.77237499, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 3231001, 231, 332, 0.15751081160675584, 3231)
+    ops.element('Truss', 3231002, 232, 331, 0.15751081160675584, 3231)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 3032, -977.23749873, -0.0013, -9.77237499, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 3032001, 32, 133, 0.15751081160675584, 3032)
+    ops.element('Truss', 3032002, 33, 132, 0.15751081160675584, 3032)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 3132, -1035.58794272, -0.0013, -10.35587943, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 3132001, 132, 233, 0.11368141227562119, 3132)
+    ops.element('Truss', 3132002, 133, 232, 0.11368141227562119, 3132)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 3232, -977.23749873, -0.0013, -9.77237499, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 3232001, 232, 333, 0.15751081160675584, 3232)
+    ops.element('Truss', 3232002, 233, 332, 0.15751081160675584, 3232)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2101, -381.87441744, -0.0013, -3.81874417, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2101001, 70100, 1201, 0.25056937751250197, 2101)
+    ops.element('Truss', 2101002, 1101, 70200, 0.25056937751250197, 2101)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 3233, -381.87441744, -0.0013, -3.81874417, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 3233001, 1101, 201, 0.25056937751250197, 3233)
+    ops.element('Truss', 3233002, 101, 1201, 0.25056937751250197, 3233)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2102, -381.87441744, -0.0013, -3.81874417, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2102001, 101, 1202, 0.25056937751250197, 2102)
+    ops.element('Truss', 2102002, 1102, 201, 0.25056937751250197, 2102)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 3234, -381.87441744, -0.0013, -3.81874417, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 3234001, 1102, 202, 0.25056937751250197, 3234)
+    ops.element('Truss', 3234002, 102, 1202, 0.25056937751250197, 3234)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 2103, -381.87441744, -0.0013, -3.81874417, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 2103001, 102, 1203, 0.25056937751250197, 2103)
+    ops.element('Truss', 2103002, 1103, 202, 0.25056937751250197, 2103)
+
+    # Create the material for diagonal struts
+    ops.uniaxialMaterial('Concrete01', 3103, -381.87441744, -0.0013, -3.81874417, -0.0045)
+    # Create the elements for diagonal struts
+    ops.element('Truss', 3103001, 1103, 203, 0.25056937751250197, 3103)
+    ops.element('Truss', 3103002, 103, 1203, 0.25056937751250197, 3103)
