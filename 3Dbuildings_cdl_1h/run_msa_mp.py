@@ -12,7 +12,7 @@ if __name__ == "__main__":
         / "outputs/MSA/CR_LFINF_7_CDL_1H_dp04"
     )
     outputs_dir.mkdir(parents=True, exist_ok=True)
-    gmdir = path / "data/MSA-Records_1.5_dp04"
+    gmdir = path / "data/MSA-Records_0.33_dp04"
     gmfilenames = ["GMR_filenames_X.txt", "GMR_filenames_Y.txt", "GMR_dts.txt"]
 
     rcmrf = RCMRF(
