@@ -133,57 +133,70 @@ class MSA:
 
             # analysis time step
             if self.analysis_time_step is None:
-                analysis_time_step = dt
+                analysis_time_step = min(dt, 0.01)
             else:
                 analysis_time_step = self.analysis_time_step
 
-            # Create the model
-            self._call_model()
-            logfile = str(self.output_path / name / f"Record{rec + 1}_{prefix}.out")
-            op.logFile(logfile, '-noEcho')
+            max_trials = 4
+            trial = 0
+            step_reduction_factor = 0.5
+            collapse_index = -1
+            
+            while collapse_index == -1 and trial < max_trials:
+                trial += 1
+                if trial != 1:
+                    analysis_time_step = step_reduction_factor * analysis_time_step
+                # Create the model
+                self._call_model()
+                logfile = str(self.output_path / name / f"Record{rec + 1}_{prefix}.out")
+                op.logFile(logfile, '-noEcho')
 
-            # Create the time series
-            apply_time_series(dt, eq_name_x, eq_name_y, self.g, self.g,
-                              self.omegas, self.damping,
-                              self.TSTAGX, self.TSTAGY,
-                              self.PTAGX, self.PTAGY)
+                # Create the time series
+                apply_time_series(dt, eq_name_x, eq_name_y, self.g, self.g,
+                                  self.omegas, self.damping,
+                                  self.TSTAGX, self.TSTAGY,
+                                  self.PTAGX, self.PTAGY)
 
-            if names_y is None:
-                print(f"[MSA] Record: {rec} - {name}: {names_x[rec]};")
-                directions = 1
-            else:
-                print(
-                    f"[MSA] Record: {rec} - {name}: {names_x[rec]} and "
-                    f"{names_y[rec]} pair;")
-                directions = 2
+                if names_y is None:
+                    print(f"[MSA] Record: {rec} - {name}: {names_x[rec]};")
+                    directions = 1
+                else:
+                    print(
+                        f"[MSA] Record: {rec} - {name}: {names_x[rec]} and "
+                        f"{names_y[rec]} pair;")
+                    directions = 2
 
-            analysis_time_step = min(analysis_time_step, dt)
-            if dt % analysis_time_step != 0:
-                analysis_time_step = dt / (int(dt / analysis_time_step))
+                analysis_time_step = min(analysis_time_step, dt)
+                if dt % analysis_time_step != 0:
+                    analysis_time_step = dt / (int(dt / analysis_time_step))
 
-            # Commence analysis
-            th = SolutionAlgorithm(
-                self.output_path / name, analysis_time_step, dur, self.dcap,
-                self.bnode, self.tnode,
-                extra_dur=self.EXTRA_DUR,
-                directions=directions
-            )
-            self.outputs[name][rec] = th.solve()
+                # Commence analysis
+                th = SolutionAlgorithm(
+                    self.output_path / name, analysis_time_step, dur, self.dcap,
+                    self.bnode, self.tnode,
+                    extra_dur=self.EXTRA_DUR,
+                    directions=directions
+                )
+                self.outputs[name][rec] = th.solve()
 
-            if self.export_at_each_step:
-                with open(self.output_path / name / f"Record{rec + 1}_{prefix}.pickle",
-                          "wb") as handle:
-                    pickle.dump(self.outputs[name][rec], handle)
+                if self.export_at_each_step:
+                    with open(self.output_path / name / f"Record{rec + 1}_{prefix}.pickle",
+                              "wb") as handle:
+                        pickle.dump(self.outputs[name][rec], handle)
 
-            collapse_index = self.outputs[name][rec][4]
-            mdrift_init = self.outputs[name][rec][5]
+                collapse_index = self.outputs[name][rec][4]
+                mdrift_init = self.outputs[name][rec][5]
+
+                # Wipe the model
+                op.wipe()
+
             with open(logfile, "a") as f:
                 if collapse_index == -1:
                     f.write(f"\n[FAILURE] Analysis failed to converge, MIDR = {mdrift_init}\n")
+                    print(f"[FAILURE] Analysis failed to converge, MIDR = {mdrift_init}, Record{rec + 1}_{prefix}")
                 if collapse_index == 0:
                     f.write(f"\n[SUCCESS] Analysis completed successfully, MIDR = {mdrift_init}\n")
+                    print(f"[SUCCESS] Analysis completed successfully, MIDR = {mdrift_init}, Record{rec + 1}_{prefix}")
                 if collapse_index == 1:
                     f.write(f"\n[FAILURE] Local structure collapse, MIDR = {mdrift_init}\n")
-
-            # Wipe the model
-            op.wipe()
+                    print(f"[FAILURE] Local structure collapse, MIDR = {mdrift_init}, Record{rec + 1}_{prefix}")

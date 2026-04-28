@@ -61,7 +61,11 @@ def apply_time_series(
         (-damping / w2 + damping / w1)
 
     # Rayleigh damping
-    op.rayleigh(a0, 0.0, 0.0, a1)
+    #             M  KT  KI  Kn
+    # op.rayleigh(a0, 0.0, 0.0, a1)  # mass and last committed stiffness prop.
+    op.rayleigh(a0, 0.0, a1, 0.0)  # mass and initial stiffness  prop.
+    # NOTE: Using initial stiffness overestimates damping, but works better
+    # in case of abrupt stiffness changes
 
     # Time series excitation
     # op.timeSeries('Path', tstagx, '-dt', dt,
@@ -97,8 +101,8 @@ def apply_time_series(
 class SolutionAlgorithm:
     g = 9.81
     ITERATIONS = 20
-    ALGORITHM_TYPE = ['Newton', '-initialThenCurrent']
-    # ALGORITHM_TYPE = ['KrylovNewton']
+    # ALGORITHM_TYPE = ['Newton', '-initialThenCurrent']
+    ALGORITHM_TYPE = ['SecantNewton']
     TEST_TYPE = 'NormDispIncr'
     INTEGRATOR_TYPE = ['TRBDF2']
     # INTEGRATOR_TYPE = ['Newmark', 0.5, 0.25]
@@ -208,8 +212,8 @@ class SolutionAlgorithm:
         # Return the analysis result
         return ok
 
-
-    def _do_single_analysis_step(self, ok: int, control_time: float) -> tuple[float, float]:
+    def _do_single_analysis_step(self, ok: int, control_time: float, dt: float
+                                 ) -> tuple[float, float]:
         """Algorithms necessary to perform the analysis
 
         Parameters
@@ -220,35 +224,43 @@ class SolutionAlgorithm:
         control_time : float
             Control time in seconds
         """
-        ok = op.analyze(1, self.dt)
-        control_time = op.getTime()
-        if ok != 0:  # try other algorithms
-            # print(f"[FAILURE] Failed at {control_time} of {self.dur}"
-            #         " seconds")
-            ok = self._set_algorithm(self.TOL, self.dt)
-        if ok != 0:  # reduce dincr to an half
-            # print(f"[FAILURE] Failed at {control_time} - "
-            #         "Reduced timestep by half...")
-            ok = self._set_algorithm(self.TOL, 0.5 * self.dt)
-        if ok != 0:  # reduce dincr to a quarter
-            # print(f"[FAILURE] Failed at {control_time} - "
-            #         "Reduced timestep by quarter...")
-            ok = self._set_algorithm(self.TOL, 0.25 * self.dt)
-        if ok != 0:  # increase tolerance by factor of 10
-            # print(f"[FAILURE] Failed at {control_time} - "
-            #         "Increased tolerance by 10 folds...")
-            ok = self._set_algorithm(10 * self.TOL, 0.25 * self.dt)
+        dt_factors = [1.0, 0.5, 0.25, 0.1, 0.01, 0.001]
+        dt_values = [factor * dt for factor in dt_factors]
+        dt_values.sort(reverse=True)  # should be in descending order
+
+        # Index for the current time step
+        dt_idx = dt_values.index(dt)
+
+        # Gradually increase the time step size
+        if dt_idx != 0:
+            dt_idx -= 1
+            dt = dt_values[dt_idx]
+
+        # Do analysis with current options
+        ok = op.analyze(1, dt)
+
+        # Try same dt with alternative algorithms first
+        if ok != 0:
+            ok = self._set_algorithm(self.TOL, dt)
+
+        # If still failing, keep decreasing dincr using dincr_values
+        while ok != 0 and dt_idx < len(dt_values) - 1:
+            dt_idx += 1
+            dt = dt_values[dt_idx]
+            ok = self._set_algorithm(self.TOL, dt)
+
+        # If still failing, relax tolerance and increase number of iterations
+        if ok != 0:  # Increase tolerance by factor of 10
+            ok = self._set_algorithm(10 * self.TOL, dt, 200)
         if ok != 0:  # increase tolerance by factor of 100
-            # print(f"[FAILURE] Failed at {control_time} - "
-            #         "Increased tolerance by 100 folds...")
-            ok = self._set_algorithm(100 * self.TOL, 0.25 * self.dt)
+            ok = self._set_algorithm(10 * self.TOL, dt, 200)
+
         if ok:
-            # if self.pflag:
-                # print(f"[FAILURE] Failed at {control_time} - exit analysis...")
             self.collapse_index = -1
-        else:
-            control_time = op.getTime()
-        return ok, control_time
+
+        control_time = op.getTime()
+
+        return ok, control_time, dt
 
     def _verify_against_zerolength(self) -> np.ndarray:
         """Verify that the elements of the model are not of zero length
@@ -339,12 +351,14 @@ class SolutionAlgorithm:
         residuals = np.zeros((self.directions, nst, 1))
 
         h = self._verify_against_zerolength()
+        dt_cur = self.dt
 
         # Run the actual analysis now
         while self.collapse_index == 0 and control_time <= self.dur and \
                 not ok:
-            # If the analysis fails, try the following changes to achieve convergence
-            ok, control_time = self._do_single_analysis_step(ok, control_time)
+            # If the analysis fails, try the following changes for convergence
+            ok, control_time, dt_cur = self._do_single_analysis_step(
+                ok, control_time, dt_cur)
 
             # Recorders
             temp_accel = np.zeros((self.directions, nst + 1, 1))
@@ -432,12 +446,12 @@ class SolutionAlgorithm:
 
         accelerations = np.asarray(accelerations)
 
-        if self.collapse_index == -1:
-            print(f"[FAILURE] Analysis failed to converge at {control_time}"
-                  f" of {self.dur}, MIDR = {mdrift_init}.")
-        if self.collapse_index == 0:
-            print(f'[SUCCESS] Analysis completed successfully, MIDR = {mdrift_init}.')
-        if self.collapse_index == 1:
-            print(f'[FAILURE] Local structure collapse, MIDR = {mdrift_init}.')
+        # if self.collapse_index == -1:
+        #     print(f"[FAILURE] Analysis failed to converge at {control_time}"
+        #           f" of {self.dur}, MIDR = {mdrift_init}.")
+        # if self.collapse_index == 0:
+        #     print(f'[SUCCESS] Analysis completed successfully, MIDR = {mdrift_init}.')
+        # if self.collapse_index == 1:
+        #     print(f'[FAILURE] Local structure collapse, MIDR = {mdrift_init}.')
 
         return accelerations, displacements, drifts, residuals, self.collapse_index, mdrift_init

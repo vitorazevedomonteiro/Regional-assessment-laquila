@@ -7,13 +7,13 @@ from src.rcmrf import RCMRF
 
 if __name__ == "__main__":
         
-    taxonomy = "CR_LFINF_7_CDL_4H_dp04"
+    taxonomy = "CR_LFINF_7_CDL_1H_dp04"
     record_set = "cloud"
     
     path = Path(__file__).parent
     outputs_dir = (
         path
-        / f"outputs/cloud/{taxonomy}"
+        / f"outputs/{record_set}/{taxonomy}"
     )
     outputs_dir.mkdir(parents=True, exist_ok=True)
     gmdir = path / f"data/{record_set}"
@@ -39,7 +39,7 @@ if __name__ == "__main__":
         multiprocess=True,
         damping=eigenvalues["Damping"][0],
         omegas=eigenvalues["CircFreq"],
-        analysis_time_step=0.002,
+        # analysis_time_step=0.01,
         taxonomy=taxonomy
     )
 

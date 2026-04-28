@@ -48,7 +48,7 @@ def _set_algorithm(tol: float, ctrl_node: int, ctrl_dof: int, dincr: float, iter
     return ok
 
 
-def do_nspa_x(max_drift: float = 0.1, dincr: float = 0.0002) -> tuple[list[float], list[float]]:
+def do_nspa_x(max_drift: float = 0.1, dincr: float = 0.001) -> tuple[list[float], list[float]]:
     """Performs nonlinear static pushover analysis (NSPA) in x direction.
 
     Parameters
@@ -58,7 +58,7 @@ def do_nspa_x(max_drift: float = 0.1, dincr: float = 0.0002) -> tuple[list[float
         By default 0.1
     dincr : float, optional.
         First displacement increment considered during the analysis.
-        By default 0.0002.
+        By default 0.001.
 
     Return
     ------
@@ -148,7 +148,7 @@ def do_nspa_x(max_drift: float = 0.1, dincr: float = 0.0002) -> tuple[list[float
     return ctrl_disp, base_shear
 
 
-def do_nspa_y(max_drift: float = 0.1, dincr: float = 0.0002) -> tuple[list[float], list[float]]:
+def do_nspa_y(max_drift: float = 0.1, dincr: float = 0.001) -> tuple[list[float], list[float]]:
     """Performs nonlinear static pushover analysis (NSPA) in y direction.
 
     Parameters
@@ -158,7 +158,7 @@ def do_nspa_y(max_drift: float = 0.1, dincr: float = 0.0002) -> tuple[list[float
         By default 0.1
     dincr : float, optional.
         First displacement increment considered during the analysis.
-        By default 0.0002.
+        By default 0.001.
 
     Return
     ------

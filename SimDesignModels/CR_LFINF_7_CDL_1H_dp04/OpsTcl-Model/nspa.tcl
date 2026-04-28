@@ -46,7 +46,7 @@ proc _set_algorithm { tol ctrl_node ctrl_dof dincr {iter 100} } {
 }
 
 
-proc do_nspa_x { { max_drift 0.1 } { dincr 0.0002 } } { 
+proc do_nspa_x { { max_drift 0.1 } { dincr 0.001 } } { 
     # Performs nonlinear static pushover analysis (NSPA) in x direction.
     #
     # Parameters
@@ -56,7 +56,7 @@ proc do_nspa_x { { max_drift 0.1 } { dincr 0.0002 } } {
     #    By default 0.1
     # dincr : float, optional.
     #    First displacement increment considered during the analysis.
-    #    By default 0.0002.
+    #    By default 0.001.
     #
     # Return
     # ------
@@ -173,7 +173,7 @@ proc do_nspa_x { { max_drift 0.1 } { dincr 0.0002 } } {
 }
 
 
-proc do_nspa_y { { max_drift 0.1 } { dincr 0.0002 } } { 
+proc do_nspa_y { { max_drift 0.1 } { dincr 0.001 } } { 
     # Performs nonlinear static pushover analysis (NSPA) in y direction.
     #
     # Parameters
@@ -183,7 +183,7 @@ proc do_nspa_y { { max_drift 0.1 } { dincr 0.0002 } } {
     #    By default 0.1
     # dincr : float, optional.
     #    First displacement increment considered during the analysis.
-    #    By default 0.0002.
+    #    By default 0.001.
     #
     # Return
     # ------

@@ -90,7 +90,7 @@ taxonomy_data = {
     "slab_type": 1,
     "concrete_grade": "B225",
     "design_class": "eu_cdl",
-    "quality": 1,
+    "quality": 2,  # For inelastic joints
     "slab_orientation": 3,
     # "slab_thickness": 0.15,
     "slab_type": 1,
