@@ -39,7 +39,7 @@ if __name__ == "__main__":
         multiprocess=True,
         damping=eigenvalues["Damping"][0],
         omegas=eigenvalues["CircFreq"],
-        analysis_time_step=0.005,
+        analysis_time_step=0.002,
         taxonomy=taxonomy
     )
 

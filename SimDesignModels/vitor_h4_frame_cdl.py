@@ -110,7 +110,7 @@ bdim.to_csv(outdir / 'design')
 
 if bdim.ok:  # Design solution is found
     include_infills = True
-    model = "DP02"
+    model = "DP04"
     scheme = "EQL"
     max_drift = 0.1
 

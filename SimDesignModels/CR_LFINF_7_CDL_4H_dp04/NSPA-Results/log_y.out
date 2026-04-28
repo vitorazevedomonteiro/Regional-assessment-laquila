@@ -1,36 +1,18 @@
 WARNING: CTestEnergyIncr::test() - failed to converge 
 after: 20 iterations
- current EnergyIncr: 4.03573e-05 (max: 1e-06) 	Norm deltaX: 8.09785e-05, Norm deltaR: 1.80064
+ current EnergyIncr: 8.27283e+08 (max: 1e-06) 	Norm deltaX: 1.27528e+07, Norm deltaR: 1159.69
 NewtonRaphson::solveCurrentStep() -the ConvergenceTest object failed in test()
-StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1842.94
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor -1.91104
 OpenSees > analyze failed, returned: -3 error flag
-WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3322(dW: << 0.00333047, dW0: -7.09338e-06)
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3132(dW: << 3.58249e-10, dW0: 0.0453409)
 Domain::update - domain failed in update
 DisplacementControl::update - model failed to update for new dU
 WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
-StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1092.07
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1000.83
 OpenSees > analyze failed, returned: -3 error flag
-WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3322(dW: << 0.00333047, dW0: -7.09338e-06)
-Domain::update - domain failed in update
-DisplacementControl::update - model failed to update for new dU
-WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
-StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1092.07
-OpenSees > analyze failed, returned: -3 error flag
-WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3322(dW: << 0.00333047, dW0: -7.09338e-06)
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3002(dW: << 0.00284897, dW0: 1.14034e+07)
 Domain::update - domain failed in update
 DisplacementControl::update - model failed to update for new dU
 WARNING NewtonLineSearch::solveCurrentStep() -the Integrator failed in update()
-StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1092.07
-OpenSees > analyze failed, returned: -3 error flag
-WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3322(dW: << 0.00333047, dW0: -7.09338e-06)
-Domain::update - domain failed in update
-DisplacementControl::update - model failed to update for new dU
-WARNING Broyden::solveCurrentStep() -the Integrator failed in update()
-StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1092.07
-OpenSees > analyze failed, returned: -3 error flag
-WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3322(dW: << 0.00333047, dW0: -7.09338e-06)
-Domain::update - domain failed in update
-DisplacementControl::update - model failed to update for new dU
-WARNING BFGS::solveCurrentStep() -the Integrator failed in update()
-StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1092.07
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 833.463
 OpenSees > analyze failed, returned: -3 error flag
