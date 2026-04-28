@@ -7,7 +7,7 @@ from src.rcmrf import RCMRF
 
 if __name__ == "__main__":
         
-    taxonomy = "CR_LFINF_7_CDL_3H_dp04_q3"
+    taxonomy = "CR_LFINF_7_CDL_3H_dp04_q1"
     record_set = "cloud"
     
     path = Path(__file__).parent
