@@ -36,7 +36,7 @@ https://apps.djura.it/hazard/record-selector/uhs
 # Add the src directory to sys.path
 sys.path.append(str(Path(__file__).parents[1]))
 
-outdir = Path.cwd() / 'tmp' / 'vitor_frame_4h_cdm'
+outdir = Path(__file__).parent / 'tmp' / 'CR_LFINF_7_CDM_4H_dp04_q1'
 outdir.mkdir(parents=True, exist_ok=True)
 
 # Initial bay widths and storey heights

@@ -1,6 +1,7 @@
-WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3301(dW: << 0.00168862, dW0: -1.20269)
-Domain::update - domain failed in update
-DisplacementControl::update - model failed to update for new dU
-WARNING NewtonRaphson::solveCurrentStep() -the Integrator failed in update()
-StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 784.742
+WARNING: CTestEnergyIncr::test() - failed to converge 
+after: 20 iterations
+ current EnergyIncr: 1.84641e-06 (max: 1e-06) 	Norm deltaX: 1.64147e-05, Norm deltaR: 0.276923
+NewtonRaphson::solveCurrentStep() -the ConvergenceTest object failed in test()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1720.79
 OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1001(dW: << 2.06488e-05, dW0: 0.000522362)

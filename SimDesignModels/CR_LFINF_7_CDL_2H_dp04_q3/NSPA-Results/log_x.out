@@ -1,0 +1,25 @@
+WARNING: CTestEnergyIncr::test() - failed to converge 
+after: 20 iterations
+ current EnergyIncr: 0.000207256 (max: 1e-06) 	Norm deltaX: 0.000124215, Norm deltaR: 4.00139
+NewtonRaphson::solveCurrentStep() -the ConvergenceTest object failed in test()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 962.008
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3120(dW: << 0.00124154, dW0: 89.4291)
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3220(dW: << 0.0126283, dW0: -535.34)
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3300(dW: << 0.0011754, dW0: -1.72789)
+Domain::update - domain failed in update
+DisplacementControl::update - model failed to update for new dU
+WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 141.286
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3020(dW: << 9.70251e-11, dW0: 6.19227e+08)
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3020(dW: << 0.000462339, dW0: 1.12183e+09)
+Domain::update - domain failed in update
+DisplacementControl::update - model failed to update for new dU
+WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor -1.11323
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3000(dW: << 0.00214554, dW0: -8.34479)
+Domain::update - domain failed in update
+DisplacementControl::update - model failed to update for new dU
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()

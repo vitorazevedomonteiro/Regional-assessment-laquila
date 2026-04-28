@@ -1,0 +1,12 @@
+WARNING: CTestEnergyIncr::test() - failed to converge 
+after: 20 iterations
+ current EnergyIncr: 3.79279e-06 (max: 1e-06) 	Norm deltaX: 5.79663e-05, Norm deltaR: 0.453406
+NewtonRaphson::solveCurrentStep() -the ConvergenceTest object failed in test()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 466.429
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3321(dW: << -0.0413123, dW0: -21123.2)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 100 iterations  current Norm: 133999 (max: 1e-06, Norm deltaR: 615.684)
+AcceleratedNewton::solveCurrentStep() -The ConvergenceTest object failed in test()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 0.834735
+OpenSees > analyze failed, returned: -3 error flag

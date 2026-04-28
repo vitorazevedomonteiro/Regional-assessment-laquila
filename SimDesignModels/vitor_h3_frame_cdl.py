@@ -35,8 +35,9 @@ https://apps.djura.it/hazard/record-selector/uhs
 
 # Add the src directory to sys.path
 sys.path.append(str(Path(__file__).parents[1]))
+q = 3
 
-outdir = Path.cwd() / 'tmp' / 'vitor_frame_3h_cdl'
+outdir = Path(__file__).parent / 'tmp' / f'CR_LFINF_7_CDL_3H_dp04_q{q}'
 outdir.mkdir(parents=True, exist_ok=True)
 
 # Initial bay widths and storey heights
@@ -91,7 +92,7 @@ taxonomy_data = {
     "slab_type": 1,
     "concrete_grade": "B225",
     "design_class": "eu_cdl",
-    "quality": 2,  # For inelastic joints
+    "quality": q,
     "slab_orientation": 3,
     # "slab_thickness": 0.15,
     "slab_type": 1,
@@ -124,7 +125,7 @@ if bdim.ok:  # Design solution is found
     bnsm.to_tcl(outdir / "OpsTcl-Model")
     # Do modal analysis
     modal_dir = outdir / "Modal-Results"
-    bnsm.do_modal(num_modes=2, out_dir=modal_dir)
+    bnsm.do_modal(num_modes=3, out_dir=modal_dir)
     # # Plot the model and save
     # bnsm.plot_model(directory=outdir, show=True)
     # # Plot the first two mode shapes and save

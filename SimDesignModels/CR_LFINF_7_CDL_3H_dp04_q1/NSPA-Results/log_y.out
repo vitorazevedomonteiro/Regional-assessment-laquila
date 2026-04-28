@@ -1,11 +1,248 @@
-WARNING: CTestEnergyIncr::test() - failed to converge 
-after: 20 iterations
- current EnergyIncr: 0.000152458 (max: 1e-06) 	Norm deltaX: 0.000307901, Norm deltaR: 9.94477
-NewtonRaphson::solveCurrentStep() -the ConvergenceTest object failed in test()
-StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 857.112
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3011(dW: << 5.12285e-10, dW0: 1.7866e+11)
+Domain::update - domain failed in update
+DisplacementControl::update - model failed to update for new dU
+WARNING NewtonRaphson::solveCurrentStep() -the Integrator failed in update()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor -14.5961
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3111(dW: << 4.83445e-09, dW0: 1.34601e+08)
+Domain::update - domain failed in update
+DisplacementControl::update - model failed to update for new dU
+WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 427.192
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3300(dW: << 0.000699415, dW0: 828.643)
+Domain::update - domain failed in update
+DisplacementControl::update - model failed to update for new dU
+WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1038.39
 OpenSees > analyze failed, returned: -3 error flag
 WARNING: CTestNormDispIncr::test() - failed to converge 
-after: 100 iterations  current Norm: 0.00013508 (max: 1e-06, Norm deltaR: 67.9361)
-AcceleratedNewton::solveCurrentStep() -The ConvergenceTest object failed in test()
-StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 556.501
+after: 100 iterations  current Norm: 1.24519e+07 (max: 1e-06, Norm deltaR: 999.036)
+NewtonLineSearch::solveCurrentStep() -the ConvergenceTest object failed in test()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor -56.7796
+OpenSees > analyze failed, returned: -3 error flag
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 0.000369365 (max: 1e-06, Norm deltaR: 76.6173)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.37682 (max: 1e-06, Norm deltaR: 2448.9)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 5.983e+07 (max: 1e-06, Norm deltaR: 1.85186e+08)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.38946e+07 (max: 1e-06, Norm deltaR: 1.59389e+06)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 3.34589e+10 (max: 1e-06, Norm deltaR: 374967)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.21668e+08 (max: 1e-06, Norm deltaR: 2979.96)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 4.65694e+06 (max: 1e-06, Norm deltaR: 1098.73)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 2.00009e+07 (max: 1e-06, Norm deltaR: 1.50731e+06)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.60771e+07 (max: 1e-06, Norm deltaR: 186916)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 6.55094e+08 (max: 1e-06, Norm deltaR: 676774)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 7.71004e+07 (max: 1e-06, Norm deltaR: 1.08528e+06)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 5.78681e+07 (max: 1e-06, Norm deltaR: 633146)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 2.81003e+07 (max: 1e-06, Norm deltaR: 387033)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 2.49673e+10 (max: 1e-06, Norm deltaR: 2.19898e+06)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.95346e+08 (max: 1e-06, Norm deltaR: 809393)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 2.21984e+09 (max: 1e-06, Norm deltaR: 428489)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.50896e+09 (max: 1e-06, Norm deltaR: 712364)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 6.43783e+08 (max: 1e-06, Norm deltaR: 1.35593e+06)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 2.78104e+07 (max: 1e-06, Norm deltaR: 46920.1)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 2.89423e+08 (max: 1e-06, Norm deltaR: 178006)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 6.68394e+06 (max: 1e-06, Norm deltaR: 60454.3)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.52401e+08 (max: 1e-06, Norm deltaR: 241236)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 3.50487e+07 (max: 1e-06, Norm deltaR: 261771)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 3.06838e+07 (max: 1e-06, Norm deltaR: 425852)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.4254e+08 (max: 1e-06, Norm deltaR: 519606)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 3.6745e+09 (max: 1e-06, Norm deltaR: 3.17739e+06)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 3.05613e+07 (max: 1e-06, Norm deltaR: 361612)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.35115e+09 (max: 1e-06, Norm deltaR: 71864.3)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 4.73863e+07 (max: 1e-06, Norm deltaR: 75440.8)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 6.82685e+08 (max: 1e-06, Norm deltaR: 305791)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.41799e+08 (max: 1e-06, Norm deltaR: 448044)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 4.59975e+08 (max: 1e-06, Norm deltaR: 429389)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 7.95622e+06 (max: 1e-06, Norm deltaR: 206908)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 3.08153e+07 (max: 1e-06, Norm deltaR: 152857)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 2.24651e+07 (max: 1e-06, Norm deltaR: 3445.42)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 2.16701e+07 (max: 1e-06, Norm deltaR: 372147)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 6.63604e+06 (max: 1e-06, Norm deltaR: 54318.5)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 3.16099e+07 (max: 1e-06, Norm deltaR: 388827)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 2.61897e+07 (max: 1e-06, Norm deltaR: 360275)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.12218e+09 (max: 1e-06, Norm deltaR: 799900)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.97246e+07 (max: 1e-06, Norm deltaR: 211592)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 6.02214e+09 (max: 1e-06, Norm deltaR: 647436)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 9.00355e+07 (max: 1e-06, Norm deltaR: 14186.7)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 8.49361e+06 (max: 1e-06, Norm deltaR: 2208.57)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 4.5566e+08 (max: 1e-06, Norm deltaR: 366644)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.14487e+08 (max: 1e-06, Norm deltaR: 198238)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 9.67743e+09 (max: 1e-06, Norm deltaR: 797562)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 2.13669e+08 (max: 1e-06, Norm deltaR: 359266)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 3.43377e+07 (max: 1e-06, Norm deltaR: 663384)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 2.68977e+08 (max: 1e-06, Norm deltaR: 1.18078e+06)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 7.69761e+08 (max: 1e-06, Norm deltaR: 732415)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 7.11828e+07 (max: 1e-06, Norm deltaR: 401582)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.4485e+07 (max: 1e-06, Norm deltaR: 62914.6)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 2.41572e+08 (max: 1e-06, Norm deltaR: 604408)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 8.62855e+07 (max: 1e-06, Norm deltaR: 600435)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 2.98481e+07 (max: 1e-06, Norm deltaR: 294325)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 2.22069e+08 (max: 1e-06, Norm deltaR: 242250)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.39586e+07 (max: 1e-06, Norm deltaR: 233667)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 6.55785e+07 (max: 1e-06, Norm deltaR: 189569)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 6.33696e+07 (max: 1e-06, Norm deltaR: 340489)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 2.4026e+07 (max: 1e-06, Norm deltaR: 297671)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 4.20029e+07 (max: 1e-06, Norm deltaR: 185367)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.43141e+08 (max: 1e-06, Norm deltaR: 110401)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 5.69707e+08 (max: 1e-06, Norm deltaR: 1.17593e+06)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 3.85253e+07 (max: 1e-06, Norm deltaR: 209301)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.14955e+09 (max: 1e-06, Norm deltaR: 980554)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 9.31058e+07 (max: 1e-06, Norm deltaR: 625458)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 9.15602e+07 (max: 1e-06, Norm deltaR: 535878)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 3.66784e+07 (max: 1e-06, Norm deltaR: 412453)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 4.30273e+08 (max: 1e-06, Norm deltaR: 840211)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.71866e+07 (max: 1e-06, Norm deltaR: 100725)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.88824e+07 (max: 1e-06, Norm deltaR: 4491.89)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 2.40242e+09 (max: 1e-06, Norm deltaR: 788379)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 8.15075e+06 (max: 1e-06, Norm deltaR: 14388.6)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.11189e+07 (max: 1e-06, Norm deltaR: 2713.75)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 2.29048e+08 (max: 1e-06, Norm deltaR: 237778)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.53929e+08 (max: 1e-06, Norm deltaR: 77979.3)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 2.05421e+08 (max: 1e-06, Norm deltaR: 584297)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.46127e+09 (max: 1e-06, Norm deltaR: 726476)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 3.63214e+07 (max: 1e-06, Norm deltaR: 217945)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.72222e+08 (max: 1e-06, Norm deltaR: 628095)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 7.70092e+09 (max: 1e-06, Norm deltaR: 1.66479e+06)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 5.83183e+07 (max: 1e-06, Norm deltaR: 339166)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 7.36801e+08 (max: 1e-06, Norm deltaR: 720395)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 3.39105e+07 (max: 1e-06, Norm deltaR: 504674)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 6.35318e+07 (max: 1e-06, Norm deltaR: 155565)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 6.19019e+09 (max: 1e-06, Norm deltaR: 2.33992e+06)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.61741e+09 (max: 1e-06, Norm deltaR: 5.51068e+06)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 3.39252e+08 (max: 1e-06, Norm deltaR: 332763)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 3.31745e+10 (max: 1e-06, Norm deltaR: 1.4968e+07)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 3.64273e+07 (max: 1e-06, Norm deltaR: 1.18821e+06)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.58825e+07 (max: 1e-06, Norm deltaR: 218846)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 4.46499e+09 (max: 1e-06, Norm deltaR: 1.03542e+07)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 3.02009e+08 (max: 1e-06, Norm deltaR: 1.37895e+06)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 5.61219e+07 (max: 1e-06, Norm deltaR: 862329)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 8.29823e+07 (max: 1e-06, Norm deltaR: 903924)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 8.42875e+07 (max: 1e-06, Norm deltaR: 103604)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.61389e+07 (max: 1e-06, Norm deltaR: 58376.6)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.86309e+08 (max: 1e-06, Norm deltaR: 2694.66)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 1.73102e+08 (max: 1e-06, Norm deltaR: 993754)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 100 iterations  current Norm: 1.73102e+08 (max: 1e-06, Norm deltaR: 993754)
+Broyden::solveCurrentStep() -the ConvergenceTest object failed in test()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 112.947
+OpenSees > analyze failed, returned: -3 error flag
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 0.0293385 (max: 1e-06, Norm deltaR: 842.737)
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3031(dW: << 0.00239787, dW0: 159.228)
+Domain::update - domain failed in update
+DisplacementControl::update - model failed to update for new dU
+WARNING BFGS::solveCurrentStep() -the Integrator failed in update()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 3041.46
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3010(dW: << 0.0148267, dW0: -66.3962)
+Domain::update - domain failed in update
+DisplacementControl::update - model failed to update for new dU
+WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor -1032.74
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3310(dW: << 0.00791123, dW0: 18.6517)
+Domain::update - domain failed in update
+DisplacementControl::update - model failed to update for new dU
+WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 76.552
 OpenSees > analyze failed, returned: -3 error flag

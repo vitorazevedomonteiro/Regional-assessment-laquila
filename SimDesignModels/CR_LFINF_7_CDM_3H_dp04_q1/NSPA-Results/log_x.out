@@ -1,18 +1,16 @@
 WARNING: CTestEnergyIncr::test() - failed to converge 
 after: 20 iterations
- current EnergyIncr: 1.99033e-06 (max: 1e-06) 	Norm deltaX: 1.84501e-05, Norm deltaR: 0.238716
+ current EnergyIncr: 0.000163187 (max: 1e-06) 	Norm deltaX: 0.00014032, Norm deltaR: 6.98605
 NewtonRaphson::solveCurrentStep() -the ConvergenceTest object failed in test()
-StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1144.09
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1022.31
 OpenSees > analyze failed, returned: -3 error flag
-WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 5201(dW: << 2.2164e-11, dW0: -1.76615)
-Domain::update - domain failed in update
-DisplacementControl::update - model failed to update for new dU
-WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
-StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 13.1156
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 100 iterations  current Norm: 4.3914e-05 (max: 1e-06, Norm deltaR: 15.4734)
+AcceleratedNewton::solveCurrentStep() -The ConvergenceTest object failed in test()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 518.062
 OpenSees > analyze failed, returned: -3 error flag
-WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3232(dW: << 0.00152492, dW0: -57.9465)
-Domain::update - domain failed in update
-DisplacementControl::update - model failed to update for new dU
-WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
-StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 23.7248
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 100 iterations  current Norm: 4.39071e-05 (max: 1e-06, Norm deltaR: 15.4757)
+AcceleratedNewton::solveCurrentStep() -The ConvergenceTest object failed in test()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 518.062
 OpenSees > analyze failed, returned: -3 error flag

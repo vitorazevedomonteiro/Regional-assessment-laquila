@@ -92,21 +92,21 @@ def apply_time_series(
         op.pattern('UniformExcitation', ptagy, 2, '-accel', tstagy)
 
     # Constraints
-    # op.constraints('Penalty', 1.0e12, 1.0e12)
-    op.constraints("Transformation")
+    op.constraints('Penalty', 1.0e12, 1.0e12)
+    # op.constraints("Transformation")
     op.numberer('RCM')
     op.system('UmfPack')
 
 
 class SolutionAlgorithm:
     g = 9.81
-    ITERATIONS = 50
-    # ALGORITHM_TYPE = ['Newton', '-initialThenCurrent']
+    ITERATIONS = 20
+    # ALGORITHM_TYPE = ['Newton']
     ALGORITHM_TYPE = ['SecantNewton']
     TEST_TYPE = 'EnergyIncr'
     INTEGRATOR_TYPE = ['TRBDF2']
     # INTEGRATOR_TYPE = ['Newmark', 0.5, 0.25]
-    TOL = 1e-06
+    TOL = 1e-05
     collapse_index = 0
 
     def __init__(
@@ -194,17 +194,16 @@ class SolutionAlgorithm:
         # print("Changing the algorithm to KrylovNewton...")
         op.algorithm('KrylovNewton')
         ok = op.analyze(1, dt)
-        # Try NewtonLineSearch algorithm
         if ok != 0:
             # print("Changing the algorithm to NewtonLineSearch...")
             op.algorithm('NewtonLineSearch', '-InitialInterpolated', 0.8)
             ok = op.analyze(1, dt)
-        # Try Broyden algorithm
+        # Try Broyden-Fletcher-Goldfarb-Shanno (BFGS) algorithm
         if ok != 0:
             # print("Changing the algorithm to Broyden...")
-            op.algorithm('Broyden', 50)
+            op.algorithm('Broyden', 20)
             ok = op.analyze(1, dt)
-        # Try Broyden-Fletcher-Goldfarb-Shanno (BFGS) algorithm
+        # Try NewtonLineSearch algorithm
         if ok != 0:
             # print("Changing the algorithm to BFGS...")
             op.algorithm('BFGS')
@@ -241,17 +240,17 @@ class SolutionAlgorithm:
 
         # Try same dt with alternative algorithms first
         if ok != 0:
-            ok = self._set_algorithm(self.TOL, dt)
+            ok = self._set_algorithm(self.TOL, dt, 50)
 
         # If still failing, keep decreasing dincr using dincr_values
         while ok != 0 and dt_idx < len(dt_values) - 1:
             dt_idx += 1
             dt = dt_values[dt_idx]
-            ok = self._set_algorithm(self.TOL, dt)
+            ok = self._set_algorithm(self.TOL, dt, 50)
 
         # If still failing, relax tolerance and increase number of iterations
         if ok != 0:
-            ok = self._set_algorithm(100 * self.TOL, dt, 200)
+            ok = self._set_algorithm(10 * self.TOL, dt, 200)
 
         # There is nothing else to do
         if ok:

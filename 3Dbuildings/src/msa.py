@@ -137,19 +137,22 @@ class MSA:
             else:
                 analysis_time_step = self.analysis_time_step
 
-            max_trials = 4
+            max_trials = 2
             trial = 0
-            step_reduction_factor = 0.5
+            step_reduction_factor = 0.2
             collapse_index = -1
             
             while collapse_index == -1 and trial < max_trials:
                 trial += 1
-                if trial != 1:
-                    analysis_time_step = step_reduction_factor * analysis_time_step
-                # Create the model
-                self._call_model()
                 logfile = str(self.output_path / name / f"Record{rec + 1}_{prefix}.out")
                 op.logFile(logfile, '-noEcho')
+
+                if trial != 1:
+                    print(f'reducing time step by {step_reduction_factor} for Record{rec + 1}_{prefix}')
+                    analysis_time_step = step_reduction_factor * analysis_time_step
+
+                # Create the model
+                self._call_model()
 
                 # Create the time series
                 apply_time_series(dt, eq_name_x, eq_name_y, self.g, self.g,
@@ -166,9 +169,9 @@ class MSA:
                         f"{names_y[rec]} pair;")
                     directions = 2
 
-                analysis_time_step = min(analysis_time_step, dt)
-                if dt % analysis_time_step != 0:
-                    analysis_time_step = dt / (int(dt / analysis_time_step))
+                # analysis_time_step = min(analysis_time_step, dt)
+                # if dt % analysis_time_step != 0:
+                #     analysis_time_step = dt / (int(dt / analysis_time_step))
 
                 # Commence analysis
                 th = SolutionAlgorithm(
