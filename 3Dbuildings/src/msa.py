@@ -179,16 +179,16 @@ class MSA:
                 )
                 self.outputs[name][rec] = th.solve()
 
-                if self.export_at_each_step:
-                    with open(self.output_path / name / f"Record{rec + 1}_{prefix}.pickle",
-                              "wb") as handle:
-                        pickle.dump(self.outputs[name][rec], handle)
-
                 collapse_index = self.outputs[name][rec][4]
                 mdrift_init = self.outputs[name][rec][5]
 
                 # Wipe the model
                 op.wipe()
+
+            if self.export_at_each_step:
+                with open(self.output_path / name / f"Record{rec + 1}_{prefix}.pickle",
+                          "wb") as handle:
+                    pickle.dump(self.outputs[name][rec], handle)
 
             with open(logfile, "a") as f:
                 if collapse_index == -1:

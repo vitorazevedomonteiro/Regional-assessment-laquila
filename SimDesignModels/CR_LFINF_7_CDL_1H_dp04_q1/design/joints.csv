@@ -1,0 +1,25 @@
+id,x-coord [m],y-coord [m],z-coord [m],bottom_column,top_column,left_beam_x,right_beam_x,left_beam_y,right_beam_y,fcm [MPa],model_type_q
+0,0,0,0,,3000,,,,,elastic,elastic
+100,5,0,0,,3100,,,,,elastic,elastic
+200,8.3,0,0,,3200,,,,,elastic,elastic
+300,13.3,0,0,,3300,,,,,elastic,elastic
+10,0,5,0,,3010,,,,,elastic,elastic
+110,5,5,0,,3110,,,,,elastic,elastic
+210,8.3,5,0,,3210,,,,,elastic,elastic
+310,13.3,5,0,,3310,,,,,elastic,elastic
+20,0,10,0,,3020,,,,,elastic,elastic
+120,5,10,0,,3120,,,,,elastic,elastic
+220,8.3,10,0,,3220,,,,,elastic,elastic
+320,13.3,10,0,,3320,,,,,elastic,elastic
+1,0,0,3,3000,,,1001,,2001,elastic,elastic
+101,5,0,3,3100,,1001,1101,,2101,elastic,elastic
+201,8.3,0,3,3200,,1101,1201,,2201,elastic,elastic
+301,13.3,0,3,3300,,1201,,,2301,elastic,elastic
+11,0,5,3,3010,,,1011,2001,2011,elastic,elastic
+111,5,5,3,3110,,1011,1111,2101,2111,elastic,elastic
+211,8.3,5,3,3210,,1111,1211,2201,2211,elastic,elastic
+311,13.3,5,3,3310,,1211,,2301,2311,elastic,elastic
+21,0,10,3,3020,,,1021,2011,,elastic,elastic
+121,5,10,3,3120,,1021,1121,2111,,elastic,elastic
+221,8.3,10,3,3220,,1121,1221,2211,,elastic,elastic
+321,13.3,10,3,3320,,1221,,2311,,elastic,elastic

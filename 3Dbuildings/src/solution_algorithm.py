@@ -100,10 +100,10 @@ def apply_time_series(
 
 class SolutionAlgorithm:
     g = 9.81
-    ITERATIONS = 20
+    ITERATIONS = 50
     # ALGORITHM_TYPE = ['Newton', '-initialThenCurrent']
     ALGORITHM_TYPE = ['SecantNewton']
-    TEST_TYPE = 'NormDispIncr'
+    TEST_TYPE = 'EnergyIncr'
     INTEGRATOR_TYPE = ['TRBDF2']
     # INTEGRATOR_TYPE = ['Newmark', 0.5, 0.25]
     TOL = 1e-06
@@ -250,11 +250,10 @@ class SolutionAlgorithm:
             ok = self._set_algorithm(self.TOL, dt)
 
         # If still failing, relax tolerance and increase number of iterations
-        if ok != 0:  # Increase tolerance by factor of 10
-            ok = self._set_algorithm(10 * self.TOL, dt, 200)
-        if ok != 0:  # increase tolerance by factor of 100
-            ok = self._set_algorithm(10 * self.TOL, dt, 200)
+        if ok != 0:
+            ok = self._set_algorithm(100 * self.TOL, dt, 200)
 
+        # There is nothing else to do
         if ok:
             self.collapse_index = -1
 

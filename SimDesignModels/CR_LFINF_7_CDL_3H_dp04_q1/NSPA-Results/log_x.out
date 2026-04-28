@@ -1,0 +1,106 @@
+WARNING: CTestEnergyIncr::test() - failed to converge 
+after: 20 iterations
+ current EnergyIncr: 1.59219e-05 (max: 1e-06) 	Norm deltaX: 3.60623e-05, Norm deltaR: 1.36623
+NewtonRaphson::solveCurrentStep() -the ConvergenceTest object failed in test()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1382.1
+OpenSees > analyze failed, returned: -3 error flag
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 100 iterations  current Norm: 4.27593e-06 (max: 1e-06, Norm deltaR: 0.431784)
+AcceleratedNewton::solveCurrentStep() -The ConvergenceTest object failed in test()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1382.22
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1221(dW: << 7.82071e-06, dW0: 0.000163743)
+Domain::update - domain failed in update
+DisplacementControl::newStep - model failed to update for new dU
+StaticAnalysis::analyze() - the Integrator failed at step: 0 with domain at load factor 1458.48
+OpenSees > analyze failed, returned: -2 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1221(dW: << 7.82071e-06, dW0: 0.000163743)
+Domain::update - domain failed in update
+DisplacementControl::newStep - model failed to update for new dU
+StaticAnalysis::analyze() - the Integrator failed at step: 0 with domain at load factor 1458.48
+OpenSees > analyze failed, returned: -2 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1221(dW: << 7.82071e-06, dW0: 0.000163743)
+Domain::update - domain failed in update
+DisplacementControl::newStep - model failed to update for new dU
+StaticAnalysis::analyze() - the Integrator failed at step: 0 with domain at load factor 1458.48
+OpenSees > analyze failed, returned: -2 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1221(dW: << 7.82071e-06, dW0: 0.000163743)
+Domain::update - domain failed in update
+DisplacementControl::newStep - model failed to update for new dU
+StaticAnalysis::analyze() - the Integrator failed at step: 0 with domain at load factor 1458.48
+OpenSees > analyze failed, returned: -2 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1221(dW: << 7.82071e-06, dW0: 0.000163743)
+Domain::update - domain failed in update
+DisplacementControl::newStep - model failed to update for new dU
+StaticAnalysis::analyze() - the Integrator failed at step: 0 with domain at load factor 1458.48
+OpenSees > analyze failed, returned: -2 error flag
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 100 iterations  current Norm: 1.45291e+06 (max: 1e-06, Norm deltaR: 965.894)
+AcceleratedNewton::solveCurrentStep() -The ConvergenceTest object failed in test()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor -5.53868
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1022(dW: << 0.000684842, dW0: 2.3973e-05)
+Domain::update - domain failed in update
+DisplacementControl::update - model failed to update for new dU
+WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1048.98
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1022(dW: << 0.000684842, dW0: 2.38672e-05)
+Domain::update - domain failed in update
+DisplacementControl::update - model failed to update for new dU
+WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 1048.98
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3131(dW: << 7.11384e-10, dW0: 1.44632e+07)
+Domain::update - domain failed in update
+DisplacementControl::update - model failed to update for new dU
+WARNING NewtonLineSearch::solveCurrentStep() -the Integrator failed in update()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor -62.2378
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3221(dW: << 0.241018, dW0: 0.428876)
+Domain::update - domain failed in update
+DisplacementControl::update - model failed to update for new dU
+WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 921.94
+OpenSees > analyze failed, returned: -3 error flag
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 100 iterations  current Norm: 6.49729e+08 (max: 1e-06, Norm deltaR: 423447)
+NewtonLineSearch::solveCurrentStep() -the ConvergenceTest object failed in test()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor -39.5304
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3230(dW: << 0.0250061, dW0: 0.0842495)
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3230(dW: << 0.0250061, dW0: 0.0842495)
+Domain::update - domain failed in update
+DisplacementControl::update - model failed to update for new dU
+WARNING Broyden::solveCurrentStep() -the Integrator failed in update()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 976.506
+OpenSees > analyze failed, returned: -3 error flag
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 0.00117445 (max: 1e-06, Norm deltaR: 27.3315)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 0.0102988 (max: 1e-06, Norm deltaR: 337.844)
+WARNING: CTestNormDispIncr::test() - failed to converge 
+after: 10 iterations  current Norm: 6604.33 (max: 1e-06, Norm deltaR: 1402.78)
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 2311(dW: << 0.0279362, dW0: 0.776384)
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3012(dW: << 0.00395434, dW0: 73.5695)
+Domain::update - domain failed in update
+DisplacementControl::update - model failed to update for new dU
+WARNING BFGS::solveCurrentStep() -the Integrator failed in update()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor -1505.37
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3322(dW: << 0.0228657, dW0: 0.0813954)
+Domain::update - domain failed in update
+DisplacementControl::update - model failed to update for new dU
+WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 721.031
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 1103(dW: << 0.00214794, dW0: 0.0455303)
+Domain::update - domain failed in update
+DisplacementControl::update - model failed to update for new dU
+WARNING AcceleratedNewton::solveCurrentStep() -the Integrator failed in update()
+StaticAnalysis::analyze() - the Algorithm failed at step: 0 with domain at load factor 819.481
+OpenSees > analyze failed, returned: -3 error flag
+WARNING - ForceBeamColumn3d::update - failed to get compatible element forces & deformations for element: 3131(dW: << 0.0133992, dW0: 118.918)
+Domain::update - domain failed in update
+DisplacementControl::update - model failed to update for new dU
+WARNInG InitialInterpolatedLineSearch::search() -the Integrator failed in update()

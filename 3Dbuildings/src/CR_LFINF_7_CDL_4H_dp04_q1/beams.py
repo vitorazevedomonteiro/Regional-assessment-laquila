@@ -1,0 +1,1405 @@
+import openseespy.opensees as ops
+
+
+def add_beams() -> None:
+    """Add components of all beams to ops domain
+    """
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1001, 0, -1, 0, '-jntOffset', 0.15, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1001990, 30.92124896, 0.00962123, 37.56339793, 0.07151503, 3.75633979, 0.31134194, -79.39757417, -0.01114591, -96.45285277, -0.08832331, -9.64528528, -0.32815022, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1001991, 45.79873645, 0.01002226, 55.63669709, 0.07265139, 5.56366971, 0.31166364, -79.3579653, -0.01107732, -96.40473558, -0.08236243, -9.64047356, -0.32137468, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1001990, 30673859.47101591, 0.07, 0.00071458, 0.00023333, 12780774.77958996, 0.00060032)
+    ops.section('Aggregator', 1001991, 1001990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1001992, 1001991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1001, 1001991, 0.32698707108999997, 1001992, 0.32698707108999997, 1001990)
+    # Create element
+    ops.element('forceBeamColumn', 1001, 1, 101, 1001, 1001)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1101, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1101990, 46.30567964, 0.00986557, 56.74991941, 0.09330575, 5.67499194, 0.39468766, -80.16437429, -0.01098617, -98.24543805, -0.10595862, -9.8245438, -0.40734053, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1101991, 46.30567964, 0.00986557, 56.74991941, 0.09355597, 5.67499194, 0.39708615, -80.16437429, -0.01098617, -98.24543805, -0.10624342, -9.8245438, -0.4097736, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1101990, 27463161.56222502, 0.07, 0.00071458, 0.00023333, 11442983.98426042, 0.00060032)
+    ops.section('Aggregator', 1101991, 1101990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1101992, 1101991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1101, 1101991, 0.25844703344, 1101992, 0.25844703344, 1101990)
+    # Create element
+    ops.element('forceBeamColumn', 1101, 101, 201, 1101, 1101)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1201, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.15, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1201990, 46.25119744, 0.01020533, 56.34193356, 0.07371683, 5.63419336, 0.31311898, -80.12929862, -0.01129691, -97.61130239, -0.08358634, -9.76113024, -0.32298849, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1201991, 31.23144028, 0.00979172, 38.04527949, 0.07203077, 3.80452795, 0.30749419, -80.17093225, -0.01136918, -97.66201933, -0.08897707, -9.76620193, -0.32444049, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1201990, 29750826.58878974, 0.07, 0.00071458, 0.00023333, 12396177.74532906, 0.00060032)
+    ops.section('Aggregator', 1201991, 1201990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1201992, 1201991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1201, 1201991, 0.32863387601, 1201992, 0.32863387601, 1201990)
+    # Create element
+    ops.element('forceBeamColumn', 1201, 201, 301, 1201, 1201)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1011, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.225, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1011990, 70.87282533, 0.00752449, 86.48404431, 0.08008963, 8.64840443, 0.32919786, -166.11352782, -0.00874137, -202.70349933, -0.09744615, -20.27034993, -0.34655438, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1011991, 104.83050354, 0.00778041, 127.92160988, 0.08319516, 12.79216099, 0.3253684, -244.83156009, -0.00937271, -298.76082114, -0.10156091, -29.87608211, -0.34373415, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1011990, 29140767.72454719, 0.1125, 0.00189844, 0.00058594, 12141986.55189466, 0.00152995)
+    ops.section('Aggregator', 1011991, 1011990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1011992, 1011991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1011, 1011991, 0.36949792893, 1011992, 0.36949792893, 1011990)
+    # Create element
+    ops.element('forceBeamColumn', 1011, 11, 111, 1011, 1011)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1111, 0, -1, 0, '-jntOffset', 0.225, 0.0, 0.0, -0.225, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1111990, 107.72180512, 0.00761147, 131.14327046, 0.09947997, 13.11432705, 0.40433303, -251.33578076, -0.0091649, -305.98258391, -0.12146642, -30.59825839, -0.42631948, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1111991, 107.72180512, 0.00761147, 131.14327046, 0.09968151, 13.11432705, 0.40612342, -251.33578076, -0.0091649, -305.98258391, -0.12171279, -30.59825839, -0.42815469, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1111990, 29961335.99776997, 0.1125, 0.00189844, 0.00058594, 12483889.99907082, 0.00152995)
+    ops.section('Aggregator', 1111991, 1111990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1111992, 1111991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1111, 1111991, 0.30230878310000003, 1111992, 0.30230878310000003, 1111990)
+    # Create element
+    ops.element('forceBeamColumn', 1111, 111, 211, 1111, 1111)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1211, 0, -1, 0, '-jntOffset', 0.225, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1211990, 106.87547199, 0.00768952, 130.75494558, 0.08557523, 13.07549456, 0.33572029, -249.26117409, -0.00931169, -304.9542673, -0.10452043, -30.49542673, -0.35466548, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1211991, 72.11931476, 0.00744295, 88.23312685, 0.08050119, 8.82331268, 0.32272546, -168.98847425, -0.00868349, -206.74602266, -0.09799104, -20.67460227, -0.34021532, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1211990, 28163245.61198681, 0.1125, 0.00189844, 0.00058594, 11734685.67166117, 0.00152995)
+    ops.section('Aggregator', 1211991, 1211990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1211992, 1211991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1211, 1211991, 0.37017658325999997, 1211992, 0.37017658325999997, 1211990)
+    # Create element
+    ops.element('forceBeamColumn', 1211, 211, 311, 1211, 1211)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1021, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.225, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1021990, 95.81682393, 0.00911682, 117.2193926, 0.07557662, 11.72193926, 0.2934924, -146.22250651, -0.01000717, -178.88417393, -0.08348707, -17.88841739, -0.30140285, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1021991, 141.71052337, 0.00953369, 173.36435078, 0.08149747, 17.33643508, 0.30654232, -215.73214654, -0.01070216, -263.92015665, -0.09026742, -26.39201566, -0.31531227, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1021990, 28183498.15108194, 0.1, 0.00133333, 0.00052083, 11743124.22961748, 0.00127345)
+    ops.section('Aggregator', 1021991, 1021990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1021992, 1021991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1021, 1021991, 0.41179347197, 1021992, 0.41179347197, 1021990)
+    # Create element
+    ops.element('forceBeamColumn', 1021, 21, 121, 1021, 1021)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1121, 0, -1, 0, '-jntOffset', 0.225, 0.0, 0.0, -0.225, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1121990, 144.39899403, 0.0094325, 176.29363574, 0.09372643, 17.62936357, 0.35615798, -219.73327914, -0.01057821, -268.26764919, -0.10377604, -26.82676492, -0.36620759, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1121991, 144.39899403, 0.0094325, 176.29363574, 0.0933448, 17.62936357, 0.35296676, -219.73327914, -0.01057821, -268.26764919, -0.1033541, -26.82676492, -0.36297606, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1121990, 28958621.77225024, 0.1, 0.00133333, 0.00052083, 12066092.40510427, 0.00127345)
+    ops.section('Aggregator', 1121991, 1121990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1121992, 1121991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1121, 1121991, 0.34498842028000004, 1121992, 0.34498842028000004, 1121990)
+    # Create element
+    ops.element('forceBeamColumn', 1121, 121, 221, 1121, 1121)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1221, 0, -1, 0, '-jntOffset', 0.225, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1221990, 144.51959592, 0.0093504, 177.00293806, 0.08326069, 17.70029381, 0.30794165, -219.74806796, -0.01051854, -269.1403433, -0.09223591, -26.91403433, -0.31691687, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1221991, 97.52909033, 0.00895124, 119.45048299, 0.07812218, 11.9450483, 0.30265605, -148.74360872, -0.0098427, -182.17637263, -0.08632012, -18.21763726, -0.31085399, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1221990, 27726463.16335728, 0.1, 0.00133333, 0.00052083, 11552692.9847322, 0.00127345)
+    ops.section('Aggregator', 1221991, 1221990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1221992, 1221991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1221, 1221991, 0.41181877945, 1221992, 0.41181877945, 1221990)
+    # Create element
+    ops.element('forceBeamColumn', 1221, 221, 321, 1221, 1221)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1031, 0, -1, 0, '-jntOffset', 0.15, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1031990, 53.31208521, 0.01035038, 65.22894036, 0.07805473, 6.52289404, 0.28923624, -81.45788272, -0.01130033, -99.6661705, -0.08615625, -9.96661705, -0.29733775, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1031991, 53.31208521, 0.01035038, 65.22894036, 0.07807943, 6.52289404, 0.2894437, -81.45788272, -0.01130033, -99.6661705, -0.08618355, -9.96661705, -0.29754782, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1031990, 28131894.23453772, 0.07, 0.00071458, 0.00023333, 11721622.59772405, 0.00060032)
+    ops.section('Aggregator', 1031991, 1031990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1031992, 1031991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1031, 1031991, 0.36876761878000003, 1031992, 0.36876761878000003, 1031990)
+    # Create element
+    ops.element('forceBeamColumn', 1031, 31, 131, 1031, 1031)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1131, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1131990, 53.49471683, 0.01022766, 65.12401304, 0.09068489, 6.5124013, 0.34988484, -81.75799778, -0.01113557, -99.53149077, -0.10009143, -9.95314908, -0.35929139, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1131991, 53.49471683, 0.01022766, 65.12401304, 0.09173636, 6.5124013, 0.35904377, -81.75799778, -0.01113557, -99.53149077, -0.10125397, -9.95314908, -0.36856138, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1131990, 29970836.84113102, 0.07, 0.00071458, 0.00023333, 12487848.68380459, 0.00060032)
+    ops.section('Aggregator', 1131991, 1131990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1131992, 1131991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1131, 1131991, 0.30044973591, 1131992, 0.30044973591, 1131990)
+    # Create element
+    ops.element('forceBeamColumn', 1131, 131, 231, 1131, 1131)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1231, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.15, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1231990, 53.703222, 0.0101384, 65.74412911, 0.07885053, 6.57441291, 0.29186012, -82.037722, -0.01108106, -100.43156418, -0.0870512, -10.04315642, -0.30006078, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1231991, 53.703222, 0.0101384, 65.74412911, 0.07845752, 6.57441291, 0.28858838, -82.037722, -0.01108106, -100.43156418, -0.08661667, -10.04315642, -0.29674754, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1231990, 27910160.44097242, 0.07, 0.00071458, 0.00023333, 11629233.51707184, 0.00060032)
+    ops.section('Aggregator', 1231991, 1231990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1231992, 1231991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1231, 1231991, 0.367761879, 1231992, 0.367761879, 1231990)
+    # Create element
+    ops.element('forceBeamColumn', 1231, 231, 331, 1231, 1231)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1002, 0, -1, 0, '-jntOffset', 0.15, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1002990, 31.5481408, 0.00958285, 38.55212183, 0.07357278, 3.85521218, 0.31281972, -81.02867194, -0.0111854, -99.01779167, -0.09097652, -9.90177917, -0.33022346, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1002991, 46.79326077, 0.00999733, 57.18180041, 0.07500927, 5.71818004, 0.31573643, -81.04001366, -0.01110396, -99.03165136, -0.0851012, -9.90316514, -0.32582836, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1002990, 28612646.28810372, 0.07, 0.00071458, 0.00023333, 11921935.95337655, 0.00060032)
+    ops.section('Aggregator', 1002991, 1002990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1002992, 1002991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1002, 1002991, 0.32809034122, 1002992, 0.32809034122, 1002990)
+    # Create element
+    ops.element('forceBeamColumn', 1002, 2, 102, 1002, 1002)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1102, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1102990, 45.60872056, 0.0097782, 55.90975577, 0.09722497, 5.59097558, 0.4087088, -78.96236004, -0.01088932, -96.79653827, -0.11042211, -9.67965383, -0.42190594, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1102991, 45.60872056, 0.0097782, 55.90975577, 0.09729604, 5.59097558, 0.40938073, -78.96236004, -0.01088932, -96.79653827, -0.110503, -9.67965383, -0.42258769, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1102990, 27358285.29699455, 0.07, 0.00071458, 0.00023333, 11399285.54041439, 0.00060032)
+    ops.section('Aggregator', 1102991, 1102990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1102992, 1102991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1102, 1102991, 0.25689985434, 1102992, 0.25689985434, 1102990)
+    # Create element
+    ops.element('forceBeamColumn', 1102, 102, 202, 1102, 1102)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1202, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.15, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1202990, 46.21286557, 0.01024654, 56.39875086, 0.07519136, 5.63987509, 0.31653996, -80.05419329, -0.01135573, -97.69912442, -0.08527658, -9.76991244, -0.32662518, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1202991, 31.20723426, 0.00982733, 38.08569342, 0.07316658, 3.80856934, 0.30786016, -80.0956136, -0.01143032, -97.74967427, -0.09041009, -9.77496743, -0.32510366, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1202990, 29098597.08277994, 0.07, 0.00071458, 0.00023333, 12124415.45115831, 0.00060032)
+    ops.section('Aggregator', 1202991, 1202990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1202992, 1202991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1202, 1202991, 0.32874490671, 1202992, 0.32874490671, 1202990)
+    # Create element
+    ops.element('forceBeamColumn', 1202, 202, 302, 1202, 1202)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1012, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.225, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1012990, 63.34854087, 0.00842763, 77.38094241, 0.08048972, 7.73809424, 0.32353182, -148.05859999, -0.00992712, -180.85521531, -0.09801697, -18.08552153, -0.34105907, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1012991, 93.85918711, 0.00871255, 114.6500338, 0.08488869, 11.46500338, 0.32723805, -218.30802501, -0.01067418, -266.66566393, -0.1037931, -26.66656639, -0.34614247, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1012990, 28766258.16736217, 0.1, 0.00133333, 0.00052083, 11985940.90306757, 0.00127345)
+    ops.section('Aggregator', 1012991, 1012990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1012992, 1012991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1012, 1012991, 0.36927469161, 1012992, 0.36927469161, 1012990)
+    # Create element
+    ops.element('forceBeamColumn', 1012, 12, 112, 1012, 1012)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1112, 0, -1, 0, '-jntOffset', 0.225, 0.0, 0.0, -0.225, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1112990, 92.95263525, 0.00867468, 113.52393543, 0.10380213, 11.35239354, 0.40638049, -216.25110626, -0.01062235, -264.10952802, -0.12690766, -26.4109528, -0.42948603, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1112991, 92.95263525, 0.00867468, 113.52393543, 0.10451794, 11.35239354, 0.41252504, -216.25110626, -0.01062235, -264.10952802, -0.12778268, -26.4109528, -0.43578978, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1112990, 28827874.08104743, 0.1, 0.00133333, 0.00052083, 12011614.20043643, 0.00127345)
+    ops.section('Aggregator', 1112991, 1112990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1112992, 1112991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1112, 1112991, 0.30007432555, 1112992, 0.30007432555, 1112990)
+    # Create element
+    ops.element('forceBeamColumn', 1112, 112, 212, 1112, 1112)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1212, 0, -1, 0, '-jntOffset', 0.225, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1212990, 92.98228697, 0.0085782, 113.20544956, 0.08550121, 11.32054496, 0.33478657, -216.37101827, -0.01046558, -263.43058656, -0.10449748, -26.34305866, -0.35378284, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1212991, 62.75756651, 0.00829945, 76.40701001, 0.0806833, 7.640701, 0.32755698, -146.73483277, -0.00974337, -178.64889381, -0.09822654, -17.86488938, -0.34510022, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1212990, 29941943.79583823, 0.1, 0.00133333, 0.00052083, 12475809.91493259, 0.00127345)
+    ops.section('Aggregator', 1212991, 1212990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1212992, 1212991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1212, 1212991, 0.36736770154, 1212992, 0.36736770154, 1212990)
+    # Create element
+    ops.element('forceBeamColumn', 1212, 212, 312, 1212, 1212)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1022, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.225, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1022990, 61.63797146, 0.00866154, 75.305121, 0.0891603, 7.5305121, 0.36079493, -143.78596539, -0.01040184, -175.6680057, -0.1088048, -17.56680057, -0.38043944, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1022991, 91.38418176, 0.00912342, 111.64703676, 0.09202221, 11.16470368, 0.36365685, -143.82667911, -0.01028262, -175.71774698, -0.10278368, -17.5717747, -0.37441832, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1022990, 28698174.35879314, 0.08, 0.00106667, 0.00026667, 11957572.64949714, 0.00073242)
+    ops.section('Aggregator', 1022991, 1022990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1022992, 1022991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1022, 1022991, 0.36814156814, 1022992, 0.36814156814, 1022990)
+    # Create element
+    ops.element('forceBeamColumn', 1022, 22, 122, 1022, 1022)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1122, 0, -1, 0, '-jntOffset', 0.225, 0.0, 0.0, -0.225, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1122990, 92.98372372, 0.00893245, 114.0033812, 0.11504366, 11.40033812, 0.44877929, -146.10870294, -0.01010979, -179.13765433, -0.12851199, -17.91376543, -0.46224761, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1122991, 92.98372372, 0.00893245, 114.0033812, 0.11549996, 11.40033812, 0.44923559, -146.10870294, -0.01010979, -179.13765433, -0.12902114, -17.91376543, -0.46275677, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1122990, 27289195.84378851, 0.08, 0.00106667, 0.00026667, 11370498.26824521, 0.00073242)
+    ops.section('Aggregator', 1122991, 1122990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1122992, 1122991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1122, 1122991, 0.29963837164, 1122992, 0.29963837164, 1122990)
+    # Create element
+    ops.element('forceBeamColumn', 1122, 122, 222, 1122, 1122)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1222, 0, -1, 0, '-jntOffset', 0.225, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1222990, 93.18029653, 0.00911078, 113.97064034, 0.09127165, 11.39706403, 0.36179597, -146.55771661, -0.01028369, -179.2576052, -0.10196134, -17.92576052, -0.37248566, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1222991, 62.81222118, 0.00864539, 76.82685433, 0.08966938, 7.68268543, 0.3601937, -146.43409491, -0.01040961, -179.10640109, -0.10945462, -17.91064011, -0.37997894, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1222990, 28263509.14983632, 0.08, 0.00106667, 0.00026667, 11776462.14576513, 0.00073242)
+    ops.section('Aggregator', 1222991, 1222990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1222992, 1222991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1222, 1222991, 0.36965253256, 1222992, 0.36965253256, 1222990)
+    # Create element
+    ops.element('forceBeamColumn', 1222, 222, 322, 1222, 1222)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1032, 0, -1, 0, '-jntOffset', 0.15, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1032990, 31.03789072, 0.00945568, 37.85256191, 0.07243884, 3.78525619, 0.31052359, -79.72895195, -0.01100983, -97.23421982, -0.08954559, -9.72342198, -0.32763033, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1032991, 46.02563203, 0.00985957, 56.13100779, 0.07360673, 5.61310078, 0.31102156, -79.72804182, -0.01093326, -97.23310987, -0.08349091, -9.72331099, -0.32090574, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1032990, 29350713.77061404, 0.07, 0.00071458, 0.00023333, 12229464.07108919, 0.00060032)
+    ops.section('Aggregator', 1032991, 1032990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1032992, 1032991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1032, 1032991, 0.32623112377, 1032992, 0.32623112377, 1032990)
+    # Create element
+    ops.element('forceBeamColumn', 1032, 32, 132, 1032, 1032)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1132, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1132990, 45.59214051, 0.01000054, 55.74994781, 0.09205512, 5.57499478, 0.39291212, -78.96952569, -0.01110407, -96.56372537, -0.10449942, -9.65637254, -0.40535642, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1132991, 45.59214051, 0.01000054, 55.74994781, 0.09270237, 5.57499478, 0.39921924, -78.96952569, -0.01110407, -96.56372537, -0.10523613, -9.65637254, -0.41175299, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1132990, 28365834.42853605, 0.07, 0.00071458, 0.00023333, 11819097.67855669, 0.00060032)
+    ops.section('Aggregator', 1132991, 1132990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1132992, 1132991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1132, 1132991, 0.25831185746, 1132992, 0.25831185746, 1132990)
+    # Create element
+    ops.element('forceBeamColumn', 1132, 132, 232, 1132, 1132)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1232, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.15, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1232990, 46.25082264, 0.00994834, 56.44842468, 0.07632385, 5.64484247, 0.32109562, -80.11526693, -0.01103647, -97.77946322, -0.08658575, -9.77794632, -0.33135752, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1232991, 31.19283618, 0.00953932, 38.07038153, 0.07440516, 3.80703815, 0.31357404, -80.1185502, -0.01111426, -97.7834704, -0.09199759, -9.77834704, -0.33116646, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1232990, 29076947.28651275, 0.07, 0.00071458, 0.00023333, 12115394.70271365, 0.00060032)
+    ops.section('Aggregator', 1232991, 1232990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1232992, 1232991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1232, 1232991, 0.32705947103, 1232992, 0.32705947103, 1232990)
+    # Create element
+    ops.element('forceBeamColumn', 1232, 232, 332, 1232, 1232)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1003, 0, -1, 0, '-jntOffset', 0.125, 0.0, 0.0, -0.125, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1003990, 31.40400776, 0.00957444, 38.45910791, 0.0730488, 3.84591079, 0.31220083, -54.50446847, -0.01043381, -66.74922674, -0.08268097, -6.67492267, -0.321833, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1003991, 31.34151209, 0.00951213, 38.38257222, 0.07470733, 3.83825722, 0.3156834, -80.47938468, -0.0111341, -98.55956487, -0.09242812, -9.85595649, -0.33340418, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1003990, 27763603.98755285, 0.07, 0.00071458, 0.00023333, 11568168.32814702, 0.00060032)
+    ops.section('Aggregator', 1003991, 1003990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1003992, 1003991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1003, 1003991, 0.32714438774000004, 1003992, 0.32714438774000004, 1003990)
+    # Create element
+    ops.element('forceBeamColumn', 1003, 3, 103, 1003, 1003)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1103, 0, -1, 0, '-jntOffset', 0.125, 0.0, 0.0, -0.125, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1103990, 30.60226649, 0.00974548, 37.33696946, 0.09127274, 3.73369695, 0.39733008, -78.50512915, -0.01132427, -95.78191245, -0.11298327, -9.57819125, -0.41904061, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1103991, 30.60226649, 0.00974548, 37.33696946, 0.09149103, 3.73369695, 0.3994958, -78.50512915, -0.01132427, -95.78191245, -0.11325546, -9.57819125, -0.42126023, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1103990, 29199813.43076361, 0.07, 0.00071458, 0.00023333, 12166588.92948484, 0.00060032)
+    ops.section('Aggregator', 1103991, 1103990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1103992, 1103991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1103, 1103991, 0.25885206531, 1103992, 0.25885206531, 1103990)
+    # Create element
+    ops.element('forceBeamColumn', 1103, 103, 203, 1103, 1103)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1203, 0, -1, 0, '-jntOffset', 0.125, 0.0, 0.0, -0.125, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1203990, 30.41607991, 0.00954169, 37.12138104, 0.07402405, 3.7121381, 0.31520286, -78.07571096, -0.0111009, -95.28769735, -0.09150606, -9.52876973, -0.33268487, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1203991, 30.48359947, 0.00958721, 37.20378546, 0.07312911, 3.72037855, 0.31942718, -52.88725709, -0.01041501, -64.54638562, -0.08273904, -6.45463856, -0.32903711, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1203990, 29086593.37065312, 0.07, 0.00071458, 0.00023333, 12119413.9044388, 0.00060032)
+    ops.section('Aggregator', 1203991, 1203990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1203992, 1203991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1203, 1203991, 0.3252761656, 1203992, 0.3252761656, 1203990)
+    # Create element
+    ops.element('forceBeamColumn', 1203, 203, 303, 1203, 1203)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1013, 0, -1, 0, '-jntOffset', 0.125, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1013990, 60.40961257, 0.0088478, 73.83834923, 0.09146937, 7.38383492, 0.36330195, -140.93734278, -0.01060967, -172.26696701, -0.1116076, -17.2266967, -0.38344017, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1013991, 60.19583613, 0.0087535, 73.57705142, 0.09602195, 7.35770514, 0.36785453, -207.24827473, -0.01164732, -253.31846763, -0.12851564, -25.33184676, -0.40034821, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1013990, 28523818.28072416, 0.08, 0.00106667, 0.00026667, 11884924.28363507, 0.00073242)
+    ops.section('Aggregator', 1013991, 1013990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1013992, 1013991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1013, 1013991, 0.36787349422, 1013992, 0.36787349422, 1013990)
+    # Create element
+    ops.element('forceBeamColumn', 1013, 13, 113, 1013, 1013)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1113, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1113990, 62.81212963, 0.00845331, 77.1094588, 0.11903785, 7.71094588, 0.45123679, -215.51370807, -0.01143922, -264.56904888, -0.15953203, -26.45690489, -0.49173098, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1113991, 62.81212963, 0.00845331, 77.1094588, 0.11771632, 7.71094588, 0.44991527, -215.51370807, -0.01143922, -264.56904888, -0.15776227, -26.45690489, -0.48996121, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1113990, 26736931.4270398, 0.08, 0.00106667, 0.00026667, 11140388.09459992, 0.00073242)
+    ops.section('Aggregator', 1113991, 1113990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1113992, 1113991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1113, 1113991, 0.30102443416, 1113992, 0.30102443416, 1113990)
+    # Create element
+    ops.element('forceBeamColumn', 1113, 113, 213, 1113, 1113)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1213, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.125, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1213990, 62.26870933, 0.00838585, 76.10943563, 0.09448604, 7.61094356, 0.36638346, -213.97557811, -0.01122542, -261.53682424, -0.12652922, -26.15368242, -0.39842664, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1213991, 62.40328938, 0.00850263, 76.27392935, 0.09060721, 7.62739293, 0.36250463, -145.46091131, -0.01023275, -177.79311607, -0.11059871, -17.77931161, -0.38249613, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1213990, 28530225.8953444, 0.08, 0.00106667, 0.00026667, 11887594.12306017, 0.00073242)
+    ops.section('Aggregator', 1213991, 1213990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1213992, 1213991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1213, 1213991, 0.36778576196, 1213992, 0.36778576196, 1213990)
+    # Create element
+    ops.element('forceBeamColumn', 1213, 213, 313, 1213, 1213)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1023, 0, -1, 0, '-jntOffset', 0.125, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1023990, 61.96494884, 0.00860366, 75.66419843, 0.09205789, 7.56641984, 0.3637037, -144.53193915, -0.01033112, -176.48515054, -0.11234689, -17.64851505, -0.3839927, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1023991, 61.96494884, 0.00860366, 75.66419843, 0.09158852, 7.56641984, 0.36323433, -144.53193915, -0.01033112, -176.48515054, -0.11177313, -17.64851505, -0.38341894, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1023990, 28897479.46360806, 0.08, 0.00106667, 0.00026667, 12040616.44317003, 0.00073242)
+    ops.section('Aggregator', 1023991, 1023990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1023992, 1023991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1023, 1023991, 0.36812642192, 1023992, 0.36812642192, 1023990)
+    # Create element
+    ops.element('forceBeamColumn', 1023, 23, 123, 1023, 1023)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1123, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1123990, 62.58985953, 0.00860976, 76.35766872, 0.1089541, 7.63576687, 0.44103611, -145.98378658, -0.01033101, -178.09564836, -0.13299353, -17.80956484, -0.46507554, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1123991, 62.58985953, 0.00860976, 76.35766872, 0.10930464, 7.63576687, 0.44138665, -145.98378658, -0.01033101, -178.09564836, -0.13342204, -17.80956484, -0.46550405, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1123990, 29230396.21329139, 0.08, 0.00106667, 0.00026667, 12179331.75553808, 0.00073242)
+    ops.section('Aggregator', 1123991, 1123990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1123992, 1123991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1123, 1123991, 0.30113043307, 1123992, 0.30113043307, 1123990)
+    # Create element
+    ops.element('forceBeamColumn', 1123, 123, 223, 1123, 1123)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1223, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.125, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1223990, 62.36380306, 0.00872802, 76.02483856, 0.08982407, 7.60248386, 0.36016806, -145.51734429, -0.01045426, -177.39348891, -0.10958736, -17.73934889, -0.37993136, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1223991, 62.36380306, 0.00872802, 76.02483856, 0.08971003, 7.60248386, 0.36005403, -145.51734429, -0.01045426, -177.39348891, -0.10944796, -17.73934889, -0.37979196, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1223990, 29498013.03143529, 0.08, 0.00106667, 0.00026667, 12290838.76309804, 0.00073242)
+    ops.section('Aggregator', 1223991, 1223990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1223992, 1223991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1223, 1223991, 0.36989909715, 1223992, 0.36989909715, 1223990)
+    # Create element
+    ops.element('forceBeamColumn', 1223, 223, 323, 1223, 1223)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1033, 0, -1, 0, '-jntOffset', 0.125, 0.0, 0.0, -0.15, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1033990, 30.55629425, 0.00981311, 37.25429579, 0.07182491, 3.72542958, 0.31191088, -52.9775449, -0.0106475, -64.59032995, -0.08122995, -6.459033, -0.32131592, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1033991, 30.49051204, 0.00977569, 37.17409398, 0.073031, 3.7174094, 0.3110233, -78.18873208, -0.01134605, -95.32786038, -0.09022115, -9.53278604, -0.32821345, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1033990, 29455055.20762828, 0.07, 0.00071458, 0.00023333, 12272939.66984512, 0.00060032)
+    ops.section('Aggregator', 1033991, 1033990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1033992, 1033991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1033, 1033991, 0.32675341375, 1033992, 0.32675341375, 1033990)
+    # Create element
+    ops.element('forceBeamColumn', 1033, 33, 133, 1033, 1033)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1133, 0, -1, 0, '-jntOffset', 0.15, 0.0, 0.0, -0.15, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1133990, 31.24386662, 0.00946467, 38.25528484, 0.09419052, 3.82552848, 0.40383119, -80.23078693, -0.01107668, -98.23533189, -0.1167241, -9.82353319, -0.42636476, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1133991, 31.24386662, 0.00946467, 38.25528484, 0.09293777, 3.82552848, 0.39182813, -80.23078693, -0.01107668, -98.23533189, -0.115162, -9.82353319, -0.41405236, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1133990, 27845216.28794128, 0.07, 0.00071458, 0.00023333, 11602173.45330887, 0.00060032)
+    ops.section('Aggregator', 1133991, 1133990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1133992, 1133991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1133, 1133991, 0.25864675371, 1133992, 0.25864675371, 1133990)
+    # Create element
+    ops.element('forceBeamColumn', 1133, 133, 233, 1133, 1133)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1233, 0, -1, 0, '-jntOffset', 0.15, 0.0, 0.0, -0.125, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1233990, 30.89774293, 0.00945248, 37.79159643, 0.07373372, 3.77915964, 0.311921, -79.3468796, -0.01104128, -97.05062466, -0.09119565, -9.70506247, -0.32938293, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1233991, 30.96237894, 0.00950948, 37.87065392, 0.07291603, 3.78706539, 0.31673171, -53.7382922, -0.01035186, -65.72829144, -0.08252183, -6.57282914, -0.32633751, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1233990, 28263884.01758406, 0.07, 0.00071458, 0.00023333, 11776618.34066003, 0.00060032)
+    ops.section('Aggregator', 1233991, 1233990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1233992, 1233991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1233, 1233991, 0.3258263191, 1233992, 0.3258263191, 1233990)
+    # Create element
+    ops.element('forceBeamColumn', 1233, 233, 333, 1233, 1233)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1004, 0, -1, 0, '-jntOffset', 0.125, 0.0, 0.0, -0.125, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1004990, 31.23931093, 0.00975572, 38.20154134, 0.05831415, 3.82015413, 0.29867366, -31.23931093, -0.00975572, -38.20154134, -0.05831415, -3.82015413, -0.29867366, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1004991, 31.19444888, 0.00971975, 38.146681, 0.05885311, 3.8146681, 0.29837324, -46.24977644, -0.01022954, -56.55735336, -0.06405614, -5.65573534, -0.30357627, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1004990, 28343587.86589291, 0.07, 0.00071458, 0.00023333, 11809828.27745538, 0.00060032)
+    ops.section('Aggregator', 1004991, 1004990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1004992, 1004991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1004, 1004991, 0.32744245108000003, 1004992, 0.32744245108000003, 1004990)
+    # Create element
+    ops.element('forceBeamColumn', 1004, 4, 104, 1004, 1004)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1104, 0, -1, 0, '-jntOffset', 0.125, 0.0, 0.0, -0.125, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1104990, 30.45648214, 0.00979201, 37.28645847, 0.07337564, 3.72864585, 0.37944887, -45.12836373, -0.01030345, -55.24856261, -0.07996062, -5.52485626, -0.38603384, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1104991, 30.45648214, 0.00979201, 37.28645847, 0.07342647, 3.72864585, 0.38008044, -45.12836373, -0.01030345, -55.24856261, -0.0800163, -5.52485626, -0.38667027, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1104990, 27896499.71718918, 0.07, 0.00071458, 0.00023333, 11623541.54882883, 0.00060032)
+    ops.section('Aggregator', 1104991, 1104990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1104992, 1104991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1104, 1104991, 0.2581449487, 1104992, 0.2581449487, 1104990)
+    # Create element
+    ops.element('forceBeamColumn', 1104, 104, 204, 1104, 1104)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1204, 0, -1, 0, '-jntOffset', 0.125, 0.0, 0.0, -0.125, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1204990, 31.17102228, 0.00937721, 38.11844183, 0.05927685, 3.81184418, 0.30108941, -46.22992532, -0.00987676, -56.53368387, -0.06454284, -5.65336839, -0.3063554, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1204991, 31.20652748, 0.00941977, 38.16186047, 0.05896824, 3.81618605, 0.30435326, -31.20652748, -0.00941977, -38.16186047, -0.05896824, -3.81618605, -0.30435326, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1204990, 28339435.05217812, 0.07, 0.00071458, 0.00023333, 11808097.93840755, 0.00060032)
+    ops.section('Aggregator', 1204991, 1204990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1204992, 1204991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1204, 1204991, 0.32530519524, 1204992, 0.32530519524, 1204990)
+    # Create element
+    ops.element('forceBeamColumn', 1204, 204, 304, 1204, 1204)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1014, 0, -1, 0, '-jntOffset', 0.125, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1014990, 35.85627188, 0.00806835, 43.76467511, 0.09680499, 4.37646751, 0.40313747, -145.34224044, -0.0104248, -177.39869757, -0.13388997, -17.73986976, -0.44022245, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1014991, 35.85627188, 0.00806835, 43.76467511, 0.09664023, 4.37646751, 0.4029727, -145.34224044, -0.0104248, -177.39869757, -0.13366072, -17.73986976, -0.4399932, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1014990, 29054895.1266335, 0.08, 0.00106667, 0.00026667, 12106206.30276396, 0.00073242)
+    ops.section('Aggregator', 1014991, 1014990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1014992, 1014991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1014, 1014991, 0.32644269416, 1014992, 0.32644269416, 1014990)
+    # Create element
+    ops.element('forceBeamColumn', 1014, 14, 114, 1014, 1014)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1114, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1114990, 35.66942672, 0.00843801, 43.82667705, 0.1268851, 4.3826677, 0.51090775, -144.28938076, -0.01101495, -177.28695619, -0.17581822, -17.72869562, -0.55984088, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1114991, 35.66942672, 0.00843801, 43.82667705, 0.1261657, 4.3826677, 0.51018835, -144.28938076, -0.01101495, -177.28695619, -0.17481727, -17.72869562, -0.55883993, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1114990, 26343496.60048134, 0.08, 0.00106667, 0.00026667, 10976456.91686722, 0.00073242)
+    ops.section('Aggregator', 1114991, 1114990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1114992, 1114991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1114, 1114991, 0.26040130291999997, 1114992, 0.26040130291999997, 1114990)
+    # Create element
+    ops.element('forceBeamColumn', 1114, 114, 214, 1114, 1114)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1214, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.125, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1214990, 36.93177249, 0.008122, 45.18943812, 0.09908109, 4.51894381, 0.40313258, -149.59999333, -0.01056263, -183.04942292, -0.13712004, -18.30494229, -0.44117153, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1214991, 36.93177249, 0.008122, 45.18943812, 0.09906201, 4.51894381, 0.40311349, -149.59999333, -0.01056263, -183.04942292, -0.13709349, -18.30494229, -0.44114497, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1214990, 28111779.51852214, 0.08, 0.00106667, 0.00026667, 11713241.46605089, 0.00073242)
+    ops.section('Aggregator', 1214991, 1214990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1214992, 1214991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1214, 1214991, 0.32889166924, 1214992, 0.32889166924, 1214990)
+    # Create element
+    ops.element('forceBeamColumn', 1214, 214, 314, 1214, 1214)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1024, 0, -1, 0, '-jntOffset', 0.125, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1024990, 53.82035407, 0.01031612, 65.71418346, 0.09367809, 6.57141835, 0.36342837, -125.15918504, -0.01256018, -152.81827459, -0.11446318, -15.28182746, -0.38421346, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1024991, 53.82035407, 0.01031612, 65.71418346, 0.09405445, 6.57141835, 0.36380473, -125.15918504, -0.01256018, -152.81827459, -0.11492325, -15.28182746, -0.38467353, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1024990, 28924547.34450828, 0.07, 0.00071458, 0.00023333, 12051894.72687845, 0.00060032)
+    ops.section('Aggregator', 1024991, 1024990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1024992, 1024991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1024, 1024991, 0.37071323725000005, 1024992, 0.37071323725000005, 1024990)
+    # Create element
+    ops.element('forceBeamColumn', 1024, 24, 124, 1024, 1024)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1124, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1124990, 54.90343001, 0.01014759, 67.3089007, 0.11566731, 6.73089007, 0.44566027, -127.4776095, -0.01245694, -156.28126982, -0.14144592, -15.62812698, -0.47143888, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1124991, 54.90343001, 0.01014759, 67.3089007, 0.11396463, 6.73089007, 0.44395759, -127.4776095, -0.01245694, -156.28126982, -0.13936454, -15.62812698, -0.4693575, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1124990, 27325959.79485791, 0.07, 0.00071458, 0.00023333, 11385816.58119079, 0.00060032)
+    ops.section('Aggregator', 1124991, 1124990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1124992, 1124991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1124, 1124991, 0.30303676791, 1124992, 0.30303676791, 1124990)
+    # Create element
+    ops.element('forceBeamColumn', 1124, 124, 224, 1124, 1124)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1224, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.125, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1224990, 52.02046167, 0.01055061, 63.475101, 0.09155148, 6.3475101, 0.36241951, -120.94344574, -0.01279548, -147.57457331, -0.11181223, -14.75745733, -0.38268027, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1224991, 52.02046167, 0.01055061, 63.475101, 0.09236295, 6.3475101, 0.36323099, -120.94344574, -0.01279548, -147.57457331, -0.11280419, -14.75745733, -0.38367223, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1224990, 29163365.16492495, 0.07, 0.00071458, 0.00023333, 12151402.15205206, 0.00060032)
+    ops.section('Aggregator', 1224991, 1224990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1224992, 1224991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1224, 1224991, 0.36918346168, 1224992, 0.36918346168, 1224990)
+    # Create element
+    ops.element('forceBeamColumn', 1224, 224, 324, 1224, 1224)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1034, 0, -1, 0, '-jntOffset', 0.125, 0.0, 0.0, -0.15, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1034990, 32.08392284, 0.00970685, 39.23290384, 0.05716864, 3.92329038, 0.29461513, -32.08392284, -0.00970685, -39.23290384, -0.05716864, -3.92329038, -0.29461513, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1034991, 32.04652503, 0.0096636, 39.18717301, 0.05754805, 3.9187173, 0.29254077, -47.5280204, -0.01017766, -58.11827511, -0.06263605, -5.81182751, -0.29762878, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1034990, 28358255.24022961, 0.07, 0.00071458, 0.00023333, 11815939.683429, 0.00060032)
+    ops.section('Aggregator', 1034991, 1034990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1034992, 1034991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1034, 1034991, 0.32896987402000005, 1034992, 0.32896987402000005, 1034990)
+    # Create element
+    ops.element('forceBeamColumn', 1034, 34, 134, 1034, 1034)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1134, 0, -1, 0, '-jntOffset', 0.15, 0.0, 0.0, -0.15, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1134990, 30.739468, 0.00982158, 37.73298035, 0.07264446, 3.77329804, 0.37334002, -45.55762014, -0.01035003, -55.92239872, -0.07917379, -5.59223987, -0.37986935, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1134991, 30.739468, 0.00982158, 37.73298035, 0.072932, 3.77329804, 0.37690247, -45.55762014, -0.01035003, -55.92239872, -0.07948879, -5.59223987, -0.38345926, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1134990, 26777114.42992664, 0.07, 0.00071458, 0.00023333, 11157131.01246944, 0.00060032)
+    ops.section('Aggregator', 1134991, 1134990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1134992, 1134991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1134, 1134991, 0.25885789911, 1134992, 0.25885789911, 1134990)
+    # Create element
+    ops.element('forceBeamColumn', 1134, 134, 234, 1134, 1134)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 1234, 0, -1, 0, '-jntOffset', 0.15, 0.0, 0.0, -0.125, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 1234990, 31.02075365, 0.00982885, 37.87092539, 0.05877662, 3.78709254, 0.30008647, -45.97651475, -0.0103331, -56.12929909, -0.06395639, -5.61292991, -0.30526624, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 1234991, 31.06658607, 0.00985908, 37.92687878, 0.05791231, 3.79268788, 0.29626437, -31.06658607, -0.00985908, -37.92687878, -0.05791231, -3.79268788, -0.29626437, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 1234990, 28974644.99328306, 0.07, 0.00071458, 0.00023333, 12072768.74720128, 0.00060032)
+    ops.section('Aggregator', 1234991, 1234990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 1234992, 1234991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 1234, 1234991, 0.32774870176000004, 1234992, 0.32774870176000004, 1234990)
+    # Create element
+    ops.element('forceBeamColumn', 1234, 234, 334, 1234, 1234)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 6200, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 6200990, 53.60321455, 0.00833772, 65.40931643, 0.12157676, 6.54093164, 0.50807443, -146.39449889, -0.01032002, -178.63787054, -0.1541393, -17.86378705, -0.54063696, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 6200991, 53.60321455, 0.00833772, 65.40931643, 0.12305382, 6.54093164, 0.50955148, -146.39449889, -0.01032002, -178.63787054, -0.15601523, -17.86378705, -0.54251289, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 6200990, 29147012.14780782, 0.08, 0.00106667, 0.00026667, 12144588.39491993, 0.00073242)
+    ops.section('Aggregator', 6200991, 6200990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 6200992, 6200991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 6200, 6200991, 0.2587337772, 6200992, 0.2587337772, 6200990)
+    # Create element
+    ops.element('forceBeamColumn', 6200, 1101, 1201, 6200, 6200)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 6201, 0, -1, 0, '-jntOffset', 0.175, 0.0, 0.0, -0.175, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 6201990, 63.16078952, 0.00852313, 77.31252363, 0.111764, 7.73125236, 0.44402322, -147.13189373, -0.01028386, -180.09809722, -0.13648713, -18.00980972, -0.46874636, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 6201991, 63.16078952, 0.00852313, 77.31252363, 0.11127467, 7.73125236, 0.44353389, -147.13189373, -0.01028386, -180.09809722, -0.13588897, -18.00980972, -0.4681482, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 6201990, 27960306.77272249, 0.08, 0.00106667, 0.00026667, 11650127.8219677, 0.00073242)
+    ops.section('Aggregator', 6201991, 6201990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 6201992, 6201991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 6201, 6201991, 0.30096982026, 6201992, 0.30096982026, 6201990)
+    # Create element
+    ops.element('forceBeamColumn', 6201, 1102, 1202, 6201, 6201)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 6202, 0, -1, 0, '-jntOffset', 0.125, 0.0, 0.0, -0.125, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 6202990, 44.9324423, 0.01014128, 54.72682941, 0.12387491, 5.47268294, 0.50989481, -122.23892099, -0.01269045, -148.88459725, -0.15713787, -14.88845973, -0.54315777, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 6202991, 44.9324423, 0.01014128, 54.72682941, 0.12374699, 5.47268294, 0.50976689, -122.23892099, -0.01269045, -148.88459725, -0.15697541, -14.88845973, -0.54299531, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 6202990, 29805294.18987082, 0.07, 0.00071458, 0.00023333, 12418872.57911284, 0.00060032)
+    ops.section('Aggregator', 6202991, 6202990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 6202992, 6202991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 6202, 6202991, 0.25905400217, 6202992, 0.25905400217, 6202990)
+    # Create element
+    ops.element('forceBeamColumn', 6202, 1103, 1203, 6202, 6202)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 6203, 0, -1, 0, '-jntOffset', 0.125, 0.0, 0.0, -0.125, 0.0, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 6203990, 39.07483667, 0.01194743, 47.7386639, 0.13228138, 4.77386639, 0.51645141, -105.63396375, -0.01540833, -129.0555437, -0.16823849, -12.90555437, -0.55240852, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 6203991, 39.07483667, 0.01194743, 47.7386639, 0.13297457, 4.77386639, 0.5171446, -105.63396375, -0.01540833, -129.0555437, -0.16911888, -12.90555437, -0.55328891, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 6203990, 28700847.58260078, 0.06, 0.00045, 0.0002, 11958686.49275032, 0.00046953)
+    ops.section('Aggregator', 6203991, 6203990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 6203992, 6203991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 6203, 6203991, 0.26030140621, 6203992, 0.26030140621, 6203990)
+    # Create element
+    ops.element('forceBeamColumn', 6203, 1104, 1204, 6203, 6203)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2001, 1, 0, 0, '-jntOffset', 0.0, 0.15, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2001990, 36.04978953, 0.00813333, 44.10625302, 0.08884923, 4.4106253, 0.3624418, -146.33640048, -0.01023792, -179.03988871, -0.12254329, -17.90398887, -0.39613587, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2001991, 70.49823432, 0.00856077, 86.25329027, 0.09429387, 8.62532903, 0.36887443, -215.42121098, -0.01101879, -263.56388099, -0.1228283, -26.3563881, -0.39740886, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2001990, 28147521.41257011, 0.1, 0.00133333, 0.00052083, 11728133.92190421, 0.00127345)
+    ops.section('Aggregator', 2001991, 2001990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2001992, 2001991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2001, 2001991, 0.3273696198, 2001992, 0.3273696198, 2001990)
+    # Create element
+    ops.element('forceBeamColumn', 2001, 1, 11, 2001, 2001)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2101, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.225, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2101990, 81.02552963, 0.00651675, 99.40469727, 0.078553, 9.94046973, 0.32022802, -190.13700899, -0.0075639, -233.26613114, -0.09562215, -23.32661311, -0.33729718, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2101991, 120.25950842, 0.00672415, 147.53819054, 0.08258912, 14.75381905, 0.32796504, -280.71173701, -0.00809191, -344.38608876, -0.10083046, -34.43860888, -0.34620639, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2101990, 27018789.45218515, 0.125, 0.00260417, 0.00065104, 11257828.93841048, 0.00178813)
+    ops.section('Aggregator', 2101991, 2101990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2101992, 2101991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2101, 2101991, 0.36922038119, 2101992, 0.36922038119, 2101990)
+    # Create element
+    ops.element('forceBeamColumn', 2101, 101, 111, 2101, 2101)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2201, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.225, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2201990, 83.07218242, 0.00646474, 101.83056231, 0.07761508, 10.18305623, 0.31827473, -194.7845797, -0.00750605, -238.76853482, -0.09448136, -23.87685348, -0.33514102, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2201991, 123.48621931, 0.00666396, 151.37042008, 0.08154288, 15.13704201, 0.32547776, -287.789017, -0.00802204, -352.77413658, -0.09955522, -35.27741366, -0.3434901, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2201990, 27374924.2493018, 0.125, 0.00260417, 0.00065104, 11406218.43720908, 0.00178813)
+    ops.section('Aggregator', 2201991, 2201990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2201992, 2201991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2201, 2201991, 0.37083636761000005, 2201992, 0.37083636761000005, 2201990)
+    # Create element
+    ops.element('forceBeamColumn', 2201, 201, 211, 2201, 2201)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2301, 1, 0, 0, '-jntOffset', 0.0, 0.15, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2301990, 35.25532729, 0.00808937, 43.05317043, 0.09170448, 4.30531704, 0.37666978, -142.92573767, -0.01013624, -174.5383355, -0.12647548, -17.45383355, -0.41144078, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2301991, 68.76979256, 0.00851662, 83.98043152, 0.0964702, 8.39804315, 0.37594691, -210.27693318, -0.01090955, -256.78640187, -0.12561493, -25.67864019, -0.40509164, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2301990, 28866700.15787146, 0.1, 0.00133333, 0.00052083, 12027791.73244644, 0.00127345)
+    ops.section('Aggregator', 2301991, 2301990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2301992, 2301991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2301, 2301991, 0.32538994772, 2301992, 0.32538994772, 2301990)
+    # Create element
+    ops.element('forceBeamColumn', 2301, 301, 311, 2301, 2301)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2011, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2011990, 71.85031225, 0.00826068, 87.78233124, 0.09442022, 8.77823312, 0.37163928, -219.19669045, -0.01064074, -267.80115333, -0.1230064, -26.78011533, -0.40022546, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2011991, 71.85031225, 0.00826068, 87.78233124, 0.09402981, 8.77823312, 0.36827843, -219.19669045, -0.01064074, -267.80115333, -0.12249725, -26.78011533, -0.39674586, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2011990, 28696200.67196972, 0.1, 0.00133333, 0.00052083, 11956750.27998738, 0.00127345)
+    ops.section('Aggregator', 2011991, 2011990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2011992, 2011991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2011, 2011991, 0.32659900965000005, 2011992, 0.32659900965000005, 2011990)
+    # Create element
+    ops.element('forceBeamColumn', 2011, 11, 21, 2011, 2011)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2111, 1, 0, 0, '-jntOffset', 0.0, 0.225, 0.0, 0.0, -0.225, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2111990, 119.49340553, 0.00650912, 146.06770267, 0.08345759, 14.60677027, 0.33426996, -278.86464414, -0.00780002, -340.88172266, -0.10186306, -34.08817227, -0.35267543, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2111991, 119.49340553, 0.00650912, 146.06770267, 0.08373935, 14.60677027, 0.33673575, -278.86464414, -0.00780002, -340.88172266, -0.10220749, -34.08817227, -0.35520389, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2111990, 28493600.13199003, 0.125, 0.00260417, 0.00065104, 11872333.38832918, 0.00178813)
+    ops.section('Aggregator', 2111991, 2111990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2111992, 2111991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2111, 2111991, 0.36625084148000003, 2111992, 0.36625084148000003, 2111990)
+    # Create element
+    ops.element('forceBeamColumn', 2111, 111, 121, 2111, 2111)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2211, 1, 0, 0, '-jntOffset', 0.0, 0.225, 0.0, 0.0, -0.225, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2211990, 119.47196087, 0.0066236, 145.6766835, 0.08117583, 14.56766835, 0.32893777, -279.21688205, -0.0079052, -340.45971173, -0.09903904, -34.04597117, -0.34680097, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2211991, 119.47196087, 0.0066236, 145.6766835, 0.08059694, 14.56766835, 0.32381958, -279.21688205, -0.0079052, -340.45971173, -0.09833139, -34.04597117, -0.34155403, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2211990, 29415535.25891844, 0.125, 0.00260417, 0.00065104, 12256473.02454935, 0.00178813)
+    ops.section('Aggregator', 2211991, 2211990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2211992, 2211991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2211, 2211991, 0.36778193264, 2211992, 0.36778193264, 2211990)
+    # Create element
+    ops.element('forceBeamColumn', 2211, 211, 221, 2211, 2211)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2311, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2311990, 70.04037624, 0.00831136, 85.74450893, 0.09687654, 8.57445089, 0.37708359, -213.84054846, -0.01072638, -261.78689782, -0.12622937, -26.17868978, -0.40643642, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2311991, 70.04037624, 0.00831136, 85.74450893, 0.09697351, 8.57445089, 0.37790883, -213.84054846, -0.01072638, -261.78689782, -0.12635583, -26.17868978, -0.40729115, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2311990, 27909038.62119903, 0.1, 0.00133333, 0.00052083, 11628766.09216626, 0.00127345)
+    ops.section('Aggregator', 2311991, 2311990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2311992, 2311991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2311, 2311991, 0.32519283241, 2311992, 0.32519283241, 2311990)
+    # Create element
+    ops.element('forceBeamColumn', 2311, 311, 321, 2311, 2311)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2021, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.15, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2021990, 72.36808736, 0.00829557, 88.16257263, 0.09328058, 8.81625726, 0.37219639, -220.92385962, -0.01063599, -269.14095053, -0.12146987, -26.91409505, -0.40038568, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2021991, 36.83404151, 0.00789639, 44.87314752, 0.08836717, 4.48731475, 0.37007776, -149.85132857, -0.00990924, -182.55669206, -0.12187356, -18.25566921, -0.40358415, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2021990, 29728181.99293539, 0.1, 0.00133333, 0.00052083, 12386742.49705641, 0.00127345)
+    ops.section('Aggregator', 2021991, 2021990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2021992, 2021991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2021, 2021991, 0.32741636309, 2021992, 0.32741636309, 2021990)
+    # Create element
+    ops.element('forceBeamColumn', 2021, 21, 31, 2021, 2021)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2121, 1, 0, 0, '-jntOffset', 0.0, 0.225, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2121990, 120.14534387, 0.00673821, 147.06250758, 0.08216774, 14.70625076, 0.32740538, -280.6660893, -0.00807874, -343.54605477, -0.10028501, -34.35460548, -0.34552264, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2121991, 80.98005612, 0.00653025, 99.12269367, 0.07844828, 9.91226937, 0.32235558, -190.12688157, -0.00755699, -232.722593, -0.09547074, -23.2722593, -0.33937804, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2121990, 27967007.34805915, 0.125, 0.00260417, 0.00065104, 11652919.72835798, 0.00178813)
+    ops.section('Aggregator', 2121991, 2121990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2121992, 2121991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2121, 2121991, 0.36945458849, 2121992, 0.36945458849, 2121990)
+    # Create element
+    ops.element('forceBeamColumn', 2121, 121, 131, 2121, 2121)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2221, 1, 0, 0, '-jntOffset', 0.0, 0.225, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2221990, 122.24759048, 0.0066259, 149.49455482, 0.08203112, 14.94945548, 0.32866671, -285.18482331, -0.00794624, -348.74779974, -0.10012278, -34.87477997, -0.34675837, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2221991, 82.27386827, 0.0064275, 100.61135162, 0.07843066, 10.06113516, 0.32460576, -193.04850474, -0.00744027, -236.0758209, -0.09545807, -23.60758209, -0.34163318, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2221990, 28338567.33548164, 0.125, 0.00260417, 0.00065104, 11807736.38978402, 0.00178813)
+    ops.section('Aggregator', 2221991, 2221990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2221992, 2221991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2221, 2221991, 0.36964256718000005, 2221992, 0.36964256718000005, 2221990)
+    # Create element
+    ops.element('forceBeamColumn', 2221, 221, 231, 2221, 2221)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2321, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.15, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2321990, 70.93567766, 0.00826333, 86.75622514, 0.09417954, 8.67562251, 0.36848728, -216.47196029, -0.01065642, -264.75097922, -0.12270474, -26.47509792, -0.39701248, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2321991, 36.13312749, 0.00785892, 44.19177834, 0.08986527, 4.41917783, 0.37223256, -146.88094535, -0.00991361, -179.63931245, -0.12401446, -17.96393124, -0.40638176, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2321990, 28293087.85557121, 0.1, 0.00133333, 0.00052083, 11788786.606488, 0.00127345)
+    ops.section('Aggregator', 2321991, 2321990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2321992, 2321991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2321, 2321991, 0.32573199013, 2321992, 0.32573199013, 2321990)
+    # Create element
+    ops.element('forceBeamColumn', 2321, 321, 331, 2321, 2321)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2002, 1, 0, 0, '-jntOffset', 0.0, 0.15, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2002990, 36.25416898, 0.00811139, 44.33643199, 0.08904375, 4.4336432, 0.36419517, -147.2371664, -0.01020882, -180.06123981, -0.12281538, -18.00612398, -0.39796679, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2002991, 53.61169906, 0.00831144, 65.56353425, 0.09297115, 6.55635342, 0.36520994, -216.67010824, -0.0110509, -264.97309935, -0.12884356, -26.49730994, -0.40108235, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2002990, 28322741.79552977, 0.1, 0.00133333, 0.00052083, 11801142.41480407, 0.00127345)
+    ops.section('Aggregator', 2002991, 2002990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2002992, 2002991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2002, 2002991, 0.32766009283, 2002992, 0.32766009283, 2002990)
+    # Create element
+    ops.element('forceBeamColumn', 2002, 2, 12, 2002, 2002)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2102, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.225, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2102990, 81.98177054, 0.00650817, 100.50810232, 0.07807437, 10.05081023, 0.31961582, -192.34707489, -0.00755136, -235.81388102, -0.09503503, -23.5813881, -0.33657648, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2102991, 81.8661961, 0.00644282, 100.36641024, 0.08127654, 10.03664102, 0.33005956, -283.48797475, -0.00815091, -347.5509029, -0.10836688, -34.75509029, -0.35714989, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2102990, 27315500.8506039, 0.125, 0.00260417, 0.00065104, 11381458.68775163, 0.00178813)
+    ops.section('Aggregator', 2102991, 2102990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2102992, 2102991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2102, 2102991, 0.37020206786, 2102992, 0.37020206786, 2102990)
+    # Create element
+    ops.element('forceBeamColumn', 2102, 102, 112, 2102, 2102)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2202, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.225, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2202990, 81.58124635, 0.00662842, 99.92943558, 0.08002263, 9.99294356, 0.32895386, -191.53720124, -0.00767456, -234.61524882, -0.09739282, -23.46152488, -0.34632405, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2202991, 81.42157918, 0.00656927, 99.73385815, 0.0818812, 9.97338582, 0.32706229, -282.29024325, -0.00828176, -345.77928063, -0.10913812, -34.57792806, -0.35431921, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2202990, 27680011.07429678, 0.125, 0.00260417, 0.00065104, 11533337.94762366, 0.00178813)
+    ops.section('Aggregator', 2202991, 2202990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2202992, 2202991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2202, 2202991, 0.37127804905, 2202992, 0.37127804905, 2202990)
+    # Create element
+    ops.element('forceBeamColumn', 2202, 202, 212, 2202, 2202)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2302, 1, 0, 0, '-jntOffset', 0.0, 0.15, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2302990, 35.75903323, 0.00799962, 43.70205705, 0.09043111, 4.37020571, 0.37053603, -145.23286307, -0.0100568, -177.49291004, -0.12474918, -17.749291, -0.4048541, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2302991, 52.87549066, 0.00819701, 64.62053085, 0.09411149, 6.46205308, 0.36886792, -213.72336223, -0.01088342, -261.19695435, -0.13042192, -26.11969544, -0.40517835, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2302990, 28576290.57913111, 0.1, 0.00133333, 0.00052083, 11906787.74130463, 0.00127345)
+    ops.section('Aggregator', 2302991, 2302990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2302992, 2302991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2302, 2302991, 0.32591322595000005, 2302992, 0.32591322595000005, 2302990)
+    # Create element
+    ops.element('forceBeamColumn', 2302, 302, 312, 2302, 2302)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2012, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2012990, 52.55416918, 0.00822507, 64.32017791, 0.09620268, 6.43201779, 0.37780472, -212.36814014, -0.01094642, -259.91385213, -0.1333555, -25.99138521, -0.41495754, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2012991, 52.55416918, 0.00822507, 64.32017791, 0.09537877, 6.43201779, 0.37076526, -212.36814014, -0.01094642, -259.91385213, -0.13220913, -25.99138521, -0.40759563, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2012990, 28017490.05400707, 0.1, 0.00133333, 0.00052083, 11673954.18916961, 0.00127345)
+    ops.section('Aggregator', 2012991, 2012990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2012992, 2012991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2012, 2012991, 0.32564767986, 2012992, 0.32564767986, 2012990)
+    # Create element
+    ops.element('forceBeamColumn', 2012, 12, 22, 2012, 2012)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2112, 1, 0, 0, '-jntOffset', 0.0, 0.225, 0.0, 0.0, -0.225, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2112990, 81.65176125, 0.00631937, 99.55681467, 0.07945877, 9.95568147, 0.32619752, -282.99046801, -0.00792615, -345.04619554, -0.1058731, -34.50461955, -0.35261185, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2112991, 121.45211063, 0.00657626, 148.08480656, 0.08094731, 14.80848066, 0.32975103, -283.53728897, -0.007857, -345.71292645, -0.09876936, -34.57129264, -0.34757308, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2112990, 29430758.68014241, 0.125, 0.00260417, 0.00065104, 12262816.11672601, 0.00178813)
+    ops.section('Aggregator', 2112991, 2112990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2112992, 2112991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2112, 2112991, 0.36862406436, 2112992, 0.36862406436, 2112990)
+    # Create element
+    ops.element('forceBeamColumn', 2112, 112, 122, 2112, 2112)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2212, 1, 0, 0, '-jntOffset', 0.0, 0.225, 0.0, 0.0, -0.225, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2212990, 81.01573244, 0.00634541, 99.02420649, 0.08103117, 9.90242065, 0.32874165, -280.74796499, -0.00798447, -343.15365203, -0.10800228, -34.3153652, -0.35571277, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2212991, 120.48250303, 0.00660628, 147.26379557, 0.08189401, 14.72637956, 0.32659197, -281.27221606, -0.00791305, -343.79443555, -0.09994598, -34.37944356, -0.34464394, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2212990, 28527263.86979785, 0.125, 0.00260417, 0.00065104, 11886359.94574911, 0.00178813)
+    ops.section('Aggregator', 2212991, 2212990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2212992, 2212991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2212, 2212991, 0.36816983634, 2212992, 0.36816983634, 2212990)
+    # Create element
+    ops.element('forceBeamColumn', 2212, 212, 222, 2212, 2212)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2312, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2312990, 54.72292963, 0.00835468, 66.93144264, 0.09263491, 6.69314426, 0.36616944, -221.11202188, -0.01112541, -270.44141662, -0.12839008, -27.04414166, -0.4019246, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2312991, 54.72292963, 0.00835468, 66.93144264, 0.09365462, 6.69314426, 0.37510485, -221.11202188, -0.01112541, -270.44141662, -0.12980886, -27.04414166, -0.4112591, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2312990, 28270740.1039885, 0.1, 0.00133333, 0.00052083, 11779475.04332854, 0.00127345)
+    ops.section('Aggregator', 2312991, 2312990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2312992, 2312991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2312, 2312991, 0.32942819268, 2312992, 0.32942819268, 2312990)
+    # Create element
+    ops.element('forceBeamColumn', 2312, 312, 322, 2312, 2312)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2022, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.15, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2022990, 53.38144034, 0.00805366, 65.31092349, 0.09478645, 6.53109235, 0.37319149, -215.61164944, -0.01074205, -263.79572845, -0.13141912, -26.37957284, -0.40982417, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2022991, 36.03241761, 0.00786663, 44.08480653, 0.09099909, 4.40848065, 0.37414312, -146.45321975, -0.00992704, -179.18203348, -0.12559472, -17.91820335, -0.40873876, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2022990, 28149238.77624792, 0.1, 0.00133333, 0.00052083, 11728849.4901033, 0.00127345)
+    ops.section('Aggregator', 2022991, 2022990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2022992, 2022991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2022, 2022991, 0.32558058701, 2022992, 0.32558058701, 2022990)
+    # Create element
+    ops.element('forceBeamColumn', 2022, 22, 32, 2022, 2022)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2122, 1, 0, 0, '-jntOffset', 0.0, 0.225, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2122990, 121.39910358, 0.00658773, 148.36490458, 0.081039, 14.83649046, 0.32535417, -283.27301574, -0.0078933, -346.19509299, -0.09890372, -34.6195093, -0.34321889, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2122991, 81.71174235, 0.00639038, 99.86198003, 0.07814372, 9.986198, 0.32741621, -191.76105562, -0.00739191, -234.35601979, -0.09510433, -23.43560198, -0.34437682, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2122990, 28576648.69725646, 0.125, 0.00260417, 0.00065104, 11906936.95719019, 0.00178813)
+    ops.section('Aggregator', 2122991, 2122990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2122992, 2122991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2122, 2122991, 0.36860031136, 2122992, 0.36860031136, 2122990)
+    # Create element
+    ops.element('forceBeamColumn', 2122, 122, 132, 2122, 2122)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2222, 1, 0, 0, '-jntOffset', 0.0, 0.225, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2222990, 122.31977766, 0.00667953, 149.66699355, 0.08237695, 14.96669936, 0.32928502, -285.41878089, -0.00801414, -349.23028522, -0.10054787, -34.92302852, -0.34745593, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2222991, 82.34601053, 0.00647814, 100.75623143, 0.07879175, 10.07562314, 0.3254932, -193.23587898, -0.00750144, -236.43791386, -0.09589875, -23.64379139, -0.3426002, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2222990, 28118542.16214227, 0.125, 0.00260417, 0.00065104, 11716059.23422594, 0.00178813)
+    ops.section('Aggregator', 2222991, 2222990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2222992, 2222991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2222, 2222991, 0.37032915441, 2222992, 0.37032915441, 2222990)
+    # Create element
+    ops.element('forceBeamColumn', 2222, 222, 232, 2222, 2222)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2322, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.15, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2322990, 52.58040588, 0.00818153, 64.05272361, 0.09196211, 6.40527236, 0.36866817, -212.64452349, -0.01079161, -259.04061909, -0.12736107, -25.90406191, -0.40406713, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2322991, 35.58120788, 0.00798313, 43.3445356, 0.08795408, 4.33445356, 0.36661946, -144.50012412, -0.00998316, -176.02805376, -0.12125204, -17.60280538, -0.39991742, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2322990, 29746920.81517588, 0.1, 0.00133333, 0.00052083, 12394550.33965662, 0.00127345)
+    ops.section('Aggregator', 2322991, 2322990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2322992, 2322991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2322, 2322991, 0.32544349302000003, 2322992, 0.32544349302000003, 2322990)
+    # Create element
+    ops.element('forceBeamColumn', 2322, 322, 332, 2322, 2322)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2003, 1, 0, 0, '-jntOffset', 0.0, 0.125, 0.0, 0.0, -0.125, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2003990, 62.88224342, 0.00826887, 76.8178535, 0.0820923, 7.68178535, 0.32978687, -146.93954379, -0.00974633, -179.5034613, -0.09998926, -17.95034613, -0.34768383, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2003991, 62.74673127, 0.00818035, 76.65230991, 0.08448861, 7.66523099, 0.32802584, -216.36386083, -0.01059222, -264.31320609, -0.11278286, -26.43132061, -0.35632009, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2003990, 28734549.73218527, 0.1, 0.00133333, 0.00052083, 11972729.0550772, 0.00127345)
+    ops.section('Aggregator', 2003991, 2003990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2003992, 2003991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2003, 2003991, 0.36712143551000004, 2003992, 0.36712143551000004, 2003990)
+    # Create element
+    ops.element('forceBeamColumn', 2003, 3, 13, 2003, 2003)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2103, 1, 0, 0, '-jntOffset', 0.0, 0.125, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2103990, 82.58542093, 0.00641614, 101.09624062, 0.08017778, 10.10962406, 0.33073282, -193.69735072, -0.00743767, -237.11296445, -0.09760508, -23.71129644, -0.34816012, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2103991, 82.50726038, 0.00634874, 101.00056105, 0.08131565, 10.1000561, 0.32254814, -285.51947391, -0.00802046, -349.51623558, -0.10841477, -34.95162356, -0.34964726, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2103990, 27933273.04066789, 0.125, 0.00260417, 0.00065104, 11638863.76694495, 0.00178813)
+    ops.section('Aggregator', 2103991, 2103990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2103992, 2103991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2103, 2103991, 0.36977661232000003, 2103992, 0.36977661232000003, 2103990)
+    # Create element
+    ops.element('forceBeamColumn', 2103, 103, 113, 2103, 2103)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2203, 1, 0, 0, '-jntOffset', 0.0, 0.125, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2203990, 82.05355637, 0.00646316, 100.60086421, 0.0804634, 10.06008642, 0.32937782, -192.46794765, -0.00750214, -235.97321949, -0.09796122, -23.59732195, -0.34687564, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2203991, 81.95403395, 0.00639624, 100.47884584, 0.08237557, 10.04788458, 0.32788896, -283.67009882, -0.00809744, -347.79061817, -0.10984757, -34.77906182, -0.35536097, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2203990, 27295525.08906922, 0.125, 0.00260417, 0.00065104, 11373135.45377884, 0.00178813)
+    ops.section('Aggregator', 2203991, 2203990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2203992, 2203991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2203, 2203991, 0.36971430914000003, 2203992, 0.36971430914000003, 2203990)
+    # Create element
+    ops.element('forceBeamColumn', 2203, 203, 213, 2203, 2203)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2303, 1, 0, 0, '-jntOffset', 0.0, 0.125, 0.0, 0.0, -0.125, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2303990, 64.10582825, 0.00856931, 78.27450368, 0.0801217, 7.82745037, 0.32293926, -149.84541589, -0.01008697, -182.96426204, -0.09755375, -18.2964262, -0.34037132, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2303991, 63.94602603, 0.00848429, 78.07938197, 0.08269832, 7.8079382, 0.32338407, -220.63207034, -0.01096153, -269.39618869, -0.11034761, -26.93961887, -0.35103336, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2303990, 28915829.34189093, 0.1, 0.00133333, 0.00052083, 12048262.22578789, 0.00127345)
+    ops.section('Aggregator', 2303991, 2303990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2303992, 2303991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2303, 2303991, 0.37169342552, 2303992, 0.37169342552, 2303990)
+    # Create element
+    ops.element('forceBeamColumn', 2303, 303, 313, 2303, 2303)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2013, 1, 0, 0, '-jntOffset', 0.0, 0.125, 0.0, 0.0, -0.125, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2013990, 62.04430128, 0.00864517, 76.05473979, 0.08653822, 7.60547398, 0.33316703, -214.00598793, -0.011218, -262.3314211, -0.11553097, -26.23314211, -0.36215977, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2013991, 62.04430128, 0.00864517, 76.05473979, 0.08574595, 7.60547398, 0.32646577, -214.00598793, -0.011218, -262.3314211, -0.11446997, -26.23314211, -0.35518979, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2013990, 27373119.61805352, 0.1, 0.00133333, 0.00052083, 11405466.5075223, 0.00127345)
+    ops.section('Aggregator', 2013991, 2013990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2013992, 2013991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2013, 2013991, 0.37012492356000004, 2013992, 0.37012492356000004, 2013990)
+    # Create element
+    ops.element('forceBeamColumn', 2013, 13, 23, 2013, 2013)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2113, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2113990, 83.19889933, 0.00655704, 101.54630846, 0.07835148, 10.15463085, 0.32088648, -288.49874547, -0.00822726, -352.11983375, -0.10437307, -35.21198338, -0.34690807, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2113991, 123.62051941, 0.00675455, 150.88189264, 0.08201584, 15.08818926, 0.32557708, -380.20913559, -0.00867522, -464.05462664, -0.10682783, -46.40546266, -0.35038907, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2113990, 29065010.25703327, 0.125, 0.00260417, 0.00065104, 12110420.94043053, 0.00178813)
+    ops.section('Aggregator', 2113991, 2113990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2113992, 2113991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2113, 2113991, 0.37325280889, 2113992, 0.37325280889, 2113990)
+    # Create element
+    ops.element('forceBeamColumn', 2113, 113, 123, 2113, 2113)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2213, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2213990, 82.04240813, 0.00639897, 100.25371889, 0.08053913, 10.02537189, 0.32754442, -284.27271882, -0.00805065, -347.37397267, -0.1073378, -34.73739727, -0.35434309, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2213991, 121.97423836, 0.0065908, 149.04939143, 0.08409615, 14.90493914, 0.33052253, -374.72944034, -0.00848949, -457.90976674, -0.10956871, -45.79097667, -0.35599509, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2213990, 28623483.6734354, 0.125, 0.00260417, 0.00065104, 11926451.53059808, 0.00178813)
+    ops.section('Aggregator', 2213991, 2213990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2213992, 2213991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2213, 2213991, 0.36997523108, 2213992, 0.36997523108, 2213990)
+    # Create element
+    ops.element('forceBeamColumn', 2213, 213, 223, 2213, 2213)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2313, 1, 0, 0, '-jntOffset', 0.0, 0.125, 0.0, 0.0, -0.125, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2313990, 62.13525518, 0.00865972, 75.59323154, 0.0833859, 7.55932315, 0.33195446, -214.46855777, -0.01107692, -260.92065281, -0.11114885, -26.09206528, -0.35971741, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2313991, 62.13525518, 0.00865972, 75.59323154, 0.08341032, 7.55932315, 0.33217159, -214.46855777, -0.01107692, -260.92065281, -0.11118155, -26.09206528, -0.35994283, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2313990, 30192479.85976462, 0.1, 0.00133333, 0.00052083, 12580199.94156859, 0.00127345)
+    ops.section('Aggregator', 2313991, 2313990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2313992, 2313991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2313, 2313991, 0.37050571564, 2313992, 0.37050571564, 2313990)
+    # Create element
+    ops.element('forceBeamColumn', 2313, 313, 323, 2313, 2313)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2023, 1, 0, 0, '-jntOffset', 0.0, 0.125, 0.0, 0.0, -0.125, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2023990, 63.29742996, 0.00842211, 77.42155468, 0.08617571, 7.74215547, 0.33570094, -218.32452188, -0.01091565, -267.04123561, -0.11504185, -26.70412356, -0.36456709, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2023991, 63.45589378, 0.00850902, 77.61537795, 0.0820639, 7.76153779, 0.32271142, -148.29298618, -0.01003578, -181.38293363, -0.09995044, -18.13829336, -0.34059796, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2023990, 28257300.85174725, 0.1, 0.00133333, 0.00052083, 11773875.35489469, 0.00127345)
+    ops.section('Aggregator', 2023991, 2023990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2023992, 2023991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2023, 2023991, 0.37012093798, 2023992, 0.37012093798, 2023990)
+    # Create element
+    ops.element('forceBeamColumn', 2023, 23, 33, 2023, 2023)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2123, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.15, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2123990, 121.25473918, 0.00657635, 148.63288172, 0.08504342, 14.86328817, 0.32970435, -372.18117845, -0.00852308, -456.21607408, -0.11085654, -45.62160741, -0.35551747, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2123991, 81.65409647, 0.00644921, 100.09079847, 0.07920287, 10.00907985, 0.32501079, -191.55664853, -0.00748311, -234.80827945, -0.09641835, -23.48082795, -0.34222627, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2123990, 27381062.6138855, 0.125, 0.00260417, 0.00065104, 11408776.08911896, 0.00178813)
+    ops.section('Aggregator', 2123991, 2123990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2123992, 2123991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2123, 2123991, 0.36911944513, 2123992, 0.36911944513, 2123990)
+    # Create element
+    ops.element('forceBeamColumn', 2123, 123, 133, 2123, 2123)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2223, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.15, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2223990, 122.05676006, 0.00657775, 148.14603113, 0.08082243, 14.81460311, 0.32792317, -375.66070177, -0.00838211, -455.95706448, -0.1052089, -45.59570645, -0.35230964, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2223991, 82.25424699, 0.00644396, 99.83584874, 0.07454268, 9.98358487, 0.31651804, -193.26517272, -0.00740607, -234.57503115, -0.09065104, -23.45750312, -0.33262639, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2223990, 30952592.61531708, 0.125, 0.00260417, 0.00065104, 12896913.58971545, 0.00178813)
+    ops.section('Aggregator', 2223991, 2223990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2223992, 2223991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2223, 2223991, 0.37014545714, 2223992, 0.37014545714, 2223990)
+    # Create element
+    ops.element('forceBeamColumn', 2223, 223, 233, 2223, 2223)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2323, 1, 0, 0, '-jntOffset', 0.0, 0.125, 0.0, 0.0, -0.125, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2323990, 61.42098972, 0.00873002, 75.07576342, 0.08575248, 7.50757634, 0.33401824, -211.83634328, -0.01124164, -258.93062395, -0.11438871, -25.8930624, -0.36265447, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2323991, 61.62050302, 0.008795, 75.31963141, 0.08236998, 7.53196314, 0.32738799, -143.94236526, -0.01033288, -175.94283339, -0.1002721, -17.59428334, -0.34529011, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2323990, 28517646.83086012, 0.1, 0.00133333, 0.00052083, 11882352.84619172, 0.00127345)
+    ops.section('Aggregator', 2323991, 2323990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2323992, 2323991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2323, 2323991, 0.36987972269, 2323992, 0.36987972269, 2323990)
+    # Create element
+    ops.element('forceBeamColumn', 2323, 323, 333, 2323, 2323)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2004, 1, 0, 0, '-jntOffset', 0.0, 0.125, 0.0, 0.0, -0.125, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2004990, 53.61995606, 0.00999505, 65.3287407, 0.0916859, 6.53287407, 0.36341477, -124.68042375, -0.01215133, -151.90641081, -0.11201154, -15.19064108, -0.38374041, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2004991, 53.61995606, 0.00999505, 65.3287407, 0.09228507, 6.53287407, 0.36401394, -124.68042375, -0.01215133, -151.90641081, -0.11274397, -15.19064108, -0.38447284, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2004990, 29695674.42594814, 0.07, 0.00071458, 0.00023333, 12373197.67747839, 0.00060032)
+    ops.section('Aggregator', 2004991, 2004990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2004992, 2004991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2004, 2004991, 0.36801389595, 2004992, 0.36801389595, 2004990)
+    # Create element
+    ops.element('forceBeamColumn', 2004, 4, 14, 2004, 2004)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2104, 1, 0, 0, '-jntOffset', 0.0, 0.125, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2104990, 72.14314851, 0.0073203, 88.15012165, 0.08062609, 8.81501216, 0.32991457, -169.03972762, -0.00853423, -206.54591408, -0.09814439, -20.65459141, -0.34743288, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2104991, 72.14314851, 0.0073203, 88.15012165, 0.07993523, 8.81501216, 0.32368671, -169.03972762, -0.00853423, -206.54591408, -0.09729987, -20.65459141, -0.34105136, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2104990, 28653328.17694858, 0.1125, 0.00189844, 0.00058594, 11938886.74039524, 0.00152995)
+    ops.section('Aggregator', 2104991, 2104990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2104992, 2104991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2104, 2104991, 0.36895809657, 2104992, 0.36895809657, 2104990)
+    # Create element
+    ops.element('forceBeamColumn', 2104, 104, 114, 2104, 2104)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2204, 1, 0, 0, '-jntOffset', 0.0, 0.125, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2204990, 72.6146252, 0.00743278, 89.12699908, 0.08067889, 8.91269991, 0.32356265, -170.02539645, -0.00871238, -208.68872229, -0.09824959, -20.86887223, -0.34113336, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2204991, 72.6146252, 0.00743278, 89.12699908, 0.0811346, 8.91269991, 0.32761824, -170.02539645, -0.00871238, -208.68872229, -0.09880666, -20.86887223, -0.34529031, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2204990, 26817364.63474392, 0.1125, 0.00189844, 0.00058594, 11173901.9311433, 0.00152995)
+    ops.section('Aggregator', 2204991, 2204990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2204992, 2204991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2204, 2204991, 0.37052503448, 2204992, 0.37052503448, 2204990)
+    # Create element
+    ops.element('forceBeamColumn', 2204, 204, 214, 2204, 2204)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2304, 1, 0, 0, '-jntOffset', 0.0, 0.125, 0.0, 0.0, -0.125, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2304990, 53.21715625, 0.01035902, 65.04992802, 0.09288757, 6.5049928, 0.36320915, -123.75291537, -0.01262266, -151.26922977, -0.11350688, -15.12692298, -0.38382846, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2304991, 53.21715625, 0.01035902, 65.04992802, 0.09356754, 6.5049928, 0.36388912, -123.75291537, -0.01262266, -151.26922977, -0.11433808, -15.12692298, -0.38465966, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2304990, 28506903.05869442, 0.07, 0.00071458, 0.00023333, 11877876.27445601, 0.00060032)
+    ops.section('Aggregator', 2304991, 2304990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2304992, 2304991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2304, 2304991, 0.36992976892, 2304992, 0.36992976892, 2304990)
+    # Create element
+    ops.element('forceBeamColumn', 2304, 304, 314, 2304, 2304)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2014, 1, 0, 0, '-jntOffset', 0.0, 0.125, 0.0, 0.0, -0.125, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2014990, 52.2621163, 0.0105797, 63.79992468, 0.09188404, 6.37999247, 0.36228639, -121.50889877, -0.01284043, -148.33418809, -0.11222815, -14.83341881, -0.3826305, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2014991, 52.2621163, 0.0105797, 63.79992468, 0.09179816, 6.37999247, 0.36220051, -121.50889877, -0.01284043, -148.33418809, -0.11212317, -14.83341881, -0.38252553, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2014990, 28991920.94764486, 0.07, 0.00071458, 0.00023333, 12079967.06151869, 0.00060032)
+    ops.section('Aggregator', 2014991, 2014990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2014992, 2014991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2014, 2014991, 0.36981926384, 2014992, 0.36981926384, 2014990)
+    # Create element
+    ops.element('forceBeamColumn', 2014, 14, 24, 2014, 2014)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2114, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2114990, 71.51886168, 0.00738002, 87.28699775, 0.07907808, 8.72869977, 0.32493833, -167.63781492, -0.00858641, -204.59779742, -0.09623127, -20.45977974, -0.34209151, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2114991, 105.95907693, 0.00762416, 129.3204267, 0.08244839, 12.93204267, 0.32383418, -247.25704745, -0.00920089, -301.77109699, -0.10066723, -30.1771097, -0.34205302, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2114990, 29079806.63350426, 0.1125, 0.00189844, 0.00058594, 12116586.09729344, 0.00152995)
+    ops.section('Aggregator', 2114991, 2114990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2114992, 2114991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2114, 2114991, 0.36885191917, 2114992, 0.36885191917, 2114990)
+    # Create element
+    ops.element('forceBeamColumn', 2114, 114, 124, 2114, 2114)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2214, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.175, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2214990, 70.89771545, 0.00704526, 86.54185744, 0.07915078, 8.65418574, 0.32460876, -166.07553615, -0.0082121, -202.72141751, -0.09635503, -20.27214175, -0.34181301, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2214991, 105.2497701, 0.00727002, 128.47396482, 0.08388662, 12.84739648, 0.33539311, -245.17934317, -0.00879274, -299.28010558, -0.10245009, -29.92801056, -0.35395658, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2214990, 29025055.17836816, 0.1125, 0.00189844, 0.00058594, 12093772.99098673, 0.00152995)
+    ops.section('Aggregator', 2214991, 2214990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2214992, 2214991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2214, 2214991, 0.36446378120000006, 2214992, 0.36446378120000006, 2214990)
+    # Create element
+    ops.element('forceBeamColumn', 2214, 214, 224, 2214, 2214)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2314, 1, 0, 0, '-jntOffset', 0.0, 0.125, 0.0, 0.0, -0.125, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2314990, 53.97606208, 0.01013142, 66.07953717, 0.09419131, 6.60795372, 0.36486772, -125.41987111, -0.01239818, -153.54375098, -0.11515434, -15.3543751, -0.38583074, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2314991, 53.97606208, 0.01013142, 66.07953717, 0.09469519, 6.60795372, 0.36537159, -125.41987111, -0.01239818, -153.54375098, -0.11577028, -15.3543751, -0.38644669, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2314990, 27901684.2983464, 0.07, 0.00071458, 0.00023333, 11625701.79097767, 0.00060032)
+    ops.section('Aggregator', 2314991, 2314990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2314992, 2314991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2314, 2314991, 0.3694448366, 2314992, 0.3694448366, 2314990)
+    # Create element
+    ops.element('forceBeamColumn', 2314, 314, 324, 2314, 2314)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2024, 1, 0, 0, '-jntOffset', 0.0, 0.125, 0.0, 0.0, -0.125, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2024990, 53.3109394, 0.01046193, 65.1593893, 0.09389439, 6.51593893, 0.36354467, -123.97445825, -0.01274109, -151.52799931, -0.11473027, -15.15279993, -0.38438055, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2024991, 53.3109394, 0.01046193, 65.1593893, 0.09439517, 6.51593893, 0.36404545, -123.97445825, -0.01274109, -151.52799931, -0.11534242, -15.15279993, -0.3849927, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2024990, 28537224.48346072, 0.07, 0.00071458, 0.00023333, 11890510.20144197, 0.00060032)
+    ops.section('Aggregator', 2024991, 2024990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2024992, 2024991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2024, 2024991, 0.37085071932, 2024992, 0.37085071932, 2024990)
+    # Create element
+    ops.element('forceBeamColumn', 2024, 24, 34, 2024, 2024)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2124, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.15, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2124990, 108.69266879, 0.00731744, 132.48855234, 0.08394739, 13.24885523, 0.33512856, -252.9497954, -0.00884448, -308.32762301, -0.10251817, -30.8327623, -0.35369934, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2124991, 73.13961466, 0.00709635, 89.15193429, 0.0799617, 8.91519343, 0.33117035, -171.24698807, -0.00826792, -208.73777223, -0.0973397, -20.87377722, -0.34854834, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2124990, 29534386.04943572, 0.1125, 0.00189844, 0.00058594, 12305994.18726488, 0.00152995)
+    ops.section('Aggregator', 2124991, 2124990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2124992, 2124991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2124, 2124991, 0.36780367760000005, 2124992, 0.36780367760000005, 2124990)
+    # Create element
+    ops.element('forceBeamColumn', 2124, 124, 134, 2124, 2124)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2224, 1, 0, 0, '-jntOffset', 0.0, 0.175, 0.0, 0.0, -0.15, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2224990, 105.53091372, 0.00760982, 128.65888135, 0.08194003, 12.86588813, 0.32599076, -246.32734532, -0.00916973, -300.31200885, -0.10003217, -30.03120089, -0.3440829, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2224991, 71.24495253, 0.00736584, 86.8588698, 0.07874925, 8.68588698, 0.32863987, -167.01868243, -0.00855952, -203.62220024, -0.09581974, -20.36222002, -0.34571036, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2224990, 29467774.04736389, 0.1125, 0.00189844, 0.00058594, 12278239.18640162, 0.00152995)
+    ops.section('Aggregator', 2224991, 2224990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2224992, 2224991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2224, 2224991, 0.36839350731000003, 2224992, 0.36839350731000003, 2224990)
+    # Create element
+    ops.element('forceBeamColumn', 2224, 224, 234, 2224, 2224)
+
+    # Create geometric transformation
+    ops.geomTransf('Linear', 2324, 1, 0, 0, '-jntOffset', 0.0, 0.125, 0.0, 0.0, -0.125, 0.0)
+    # Create uniaxial materials
+    ops.uniaxialMaterial('Hysteretic', 2324990, 50.97534192, 0.01059052, 62.28001455, 0.09574848, 6.22800146, 0.36789792, -118.435609, -0.01284994, -144.70077441, -0.11694839, -14.47007744, -0.38909783, 0.8, 0.2, 0.0, 0.0, 0.85)
+    ops.uniaxialMaterial('Hysteretic', 2324991, 50.97534192, 0.01059052, 62.28001455, 0.09524283, 6.22800146, 0.36739228, -118.435609, -0.01284994, -144.70077441, -0.11633029, -14.47007744, -0.38847973, 0.8, 0.2, 0.0, 0.0, 0.85)
+    # Create element sections
+    ops.section('Elastic', 2324990, 28687436.24910814, 0.07, 0.00071458, 0.00023333, 11953098.43712839, 0.00060032)
+    ops.section('Aggregator', 2324991, 2324990, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    ops.section('Aggregator', 2324992, 2324991, 'Mz', 99999, 'Vy', 99999, 'My', 99999, 'Vz', 99999, 'P', 99999, 'T')
+    # Create integration scheme
+    ops.beamIntegration('HingeRadau', 2324, 2324991, 0.36744517904, 2324992, 0.36744517904, 2324990)
+    # Create element
+    ops.element('forceBeamColumn', 2324, 324, 334, 2324, 2324)
