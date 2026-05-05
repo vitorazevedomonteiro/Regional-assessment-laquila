@@ -224,16 +224,13 @@ class SolutionAlgorithm:
             Control time in seconds
         """
         dt_factors = [1.0, 0.5, 0.25, 0.1, 0.01, 0.001]
-        dt_values = [factor * dt for factor in dt_factors]
+        dt_values = [factor * self.dt for factor in dt_factors]
         dt_values.sort(reverse=True)  # should be in descending order
 
         # Index for the current time step
-        dt_idx = dt_values.index(dt)
-
-        # Gradually increase the time step size
-        if dt_idx != 0:
-            dt_idx -= 1
-            dt = dt_values[dt_idx]
+        # Always start from the beginning, not from wherever dt currently is
+        dt_idx = 0                           # ← was: dt_values.index(dt)
+        dt = dt_values[dt_idx]               # ← always try full step first
 
         # Do analysis with current options
         ok = op.analyze(1, dt)
@@ -242,11 +239,15 @@ class SolutionAlgorithm:
         if ok != 0:
             ok = self._set_algorithm(self.TOL, dt, 50)
 
-        # If still failing, keep decreasing dincr using dincr_values
+        # If still failing, keep decreasing dincr using dincr_values)
         while ok != 0 and dt_idx < len(dt_values) - 1:
+            # print('dt_idx is:', dt_idx)
+            # print('len(dt_values) - 1 is:', len(dt_values) - 1)
             dt_idx += 1
             dt = dt_values[dt_idx]
+            # print('dt is:',dt)
             ok = self._set_algorithm(self.TOL, dt, 50)
+            # print('ok is:', ok)
 
         # If still failing, relax tolerance and increase number of iterations
         if ok != 0:
