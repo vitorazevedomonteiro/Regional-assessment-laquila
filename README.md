@@ -1,17 +1,45 @@
-# Regional assessment laquila
-To run MSA:
-  1. Go to folder called "3Dbuildings" 
-  2. The data folder should contain a folder called "cloud", which should have inside folder regarding the record sets like: "set1", "set2", etc.
-  3. The output folder is the folder that will contain the outputs from the analysis chosen
-  4. I used the python script run_msa_mp.py to run MSA in this specific building typology. You should set taxonomy and record_set parameters, e.g., taxonomy = "CR_LFINF_7_CDL_4H_dp04" and record_set = "cloud".
-  5. Outputs are named after taxonomy and folder names for each subset of records (e.g., set1, and set2).
+# Influence of Multi-IM Ground Motion Simulations on Regional Loss Assessment
 
-About Section 8:
-  1. 'Term1.py' corresponds to Equation 39, which demonstrates the part of the variance of the loss that comes from aleatory uncertainty in Damage States definition
-  2. 'Term2.py' corresponds to Equation 47, which is decomposed into two parts. The first part is the between-event contribution and the second part is the within-event contribution.
-    2.1 There is the python script "LossWithinVariability.py" that stores all the information from the within-event variability (phi), spatial correlation between the different periods analysed in that formula 47, and the loss sensitivity of the IMs (names as 'si').
-    2.2 There is the python script "LossWithinVariability.py" that stores all the information from the between-event variability (tau), and also the loss sensistivity of the IMs.
-    2.3. Just to note that those two previous scripts in 2.1 and 2.2 call the "loss_sensitivity_{im_name}.csv", and "Building_Pair_Correlations_{im_name}.csv" which are not in this repository but I have the files.
-  3. 'Get_si.py' is the python script that calculates and creates the csv files for the loss sensitivity of the analysed IMs.
-  4. 'Mechanism3.py' corresponds to Equations 50 and 51.
-  5. 'EmpiricalVariance.py' as the name sugests, calculates the empirical variance of the losses, and stores the results in a csv file, and it's that information that helps to build Table 5.
+The study evaluates how the choice of intensity measure (IM) and ground motion record dataset affects the fragility and loss estimates used in regional loss assessment. It compares traditional IMs (PGA and Sa(T)) against next-generation IMs (Saavg(T) and FIV3(T)), across a range of vibration periods and two record-selection datasets.
+
+This repository contains the data, structural models, and results supporting the paper.
+
+## Reference
+
+V. A. Monteiro, V. Ozsarac, D. Shahnazaryan, and G. J. O'Reilly, "Influence of multi-IM ground motion simulations on regional loss assessment" (under review), 2026.
+
+## Study parameters
+
+The analyses span the following dimensions, which recur throughout the folder structure:
+
+- **Intensity Measures (IMs):** PGA, Sa(T), Saavg(T), and FIV3(T)
+- **Periods (T):** 0.14, 0.33, 0.45, 0.7, 1.5 s
+- **Record datasets:**
+  - `CS_dataset` — records selected using Conditional Spectrum (CS) record selection
+  - `FEMAP695` — records from the FEMA-P695 far-field set
+- **Building typologies:** the suite of buildings analysed in the study (see `SimDesignModels`). Briefly, these are reinforced concrete buildings from 1 to 4 storeys, considering low-code and medium-code levels.
+
+## SimDesignModels
+
+The OpenSeesPy models for every building used in the study. These are the numerical models on which all subsequent analyses are based.
+
+## 3Dbuildings
+
+The setup used to run Multiple Stripe Analysis (MSA) on the buildings. This is where the structural models are subjected to the ground-motion records across increasing intensity levels.
+
+## Fragility_functions
+
+Fragility functions derived for all buildings, IMs, periods, and both record datasets. Figures of the fragility curves are organised into two subfolders by record dataset:
+
+- `CS_dataset` — fragility curves obtained under Conditional Spectrum record selection
+- `FEMAP695` — fragility curves obtained using FEMA P-695 far-field records
+
+The file `fragility_parameters.pdf` collects, in one place, the fitted parameters of every fragility function, for all IMs, periods, typologies, and record datasets.
+
+## HazardConsistencyPlots
+
+Hazard consistency checks for several buildings. These plots verify whether the selected records (CS-based or FEMA P-695) reproduce the target site hazard.
+
+## LossDistributionTypologies
+
+Disaggregation of the expected losses across the different damage states and across the different building typologies, presented for all IMs and periods.
