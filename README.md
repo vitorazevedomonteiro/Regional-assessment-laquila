@@ -1,12 +1,14 @@
-# Spatial correlation modelling strategies and intensity measure choices in regional seismic loss assessment
+# Seismic risk assessment using several intensity measures, different correlation modelling approaches, and record sets.
 
-The study evaluates how the choice of intensity measure (IM) and ground motion record dataset affects the fragility and loss estimates used in regional loss assessment. It compares traditional IMs (PGA and Sa(T)) against next-generation IMs (Saavg(T) and FIV3(T)), across a range of vibration periods and two record-selection datasets.
+The study evaluates how the spatial and IM-correlation modelling choices, selection of intensity measures (IMs), and ground motion record datasets affects the fragility and loss estimates used in regional loss assessment for a heterogeneous portfolio of buildings. It compares traditional IMs (PGA and Sa(T)) against next-generation IMs (Saavg(T) and FIV3(T)), across a range of vibration periods and two record-selection datasets.
 
-This repository contains the data, structural models, and results supporting the paper.
+This repository contains the data, structural models, and results supporting the papers presented below.
 
 ## Reference
 
 V. A. Monteiro, V. Ozsarac, D. Shahnazaryan, and G. J. O'Reilly, "Spatial correlation modelling strategies and intensity measure choices in regional seismic loss assessment" (under review), 2026.
+
+V. A. Monteiro and G. J. O'Reilly, "Record selection effects on aggregate loss estimates for regional seismic portfolios" (under review), 2026.
 
 ## Study parameters
 
